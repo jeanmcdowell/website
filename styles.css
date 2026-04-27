@@ -1,0 +1,229 @@
+/* Jean McDowell - Bauhaus Pure
+   Type: Archivo Black (heavy grotesque) + Inter (body) by default
+   Palette: red / yellow / blue / black on cream
+*/
+
+:root {
+  --bg: #f2ece1;            /* cream */
+  --ink: #0a0a0a;           /* near black */
+  --ink-soft: #2a2a2a;
+  --paper: #fbf7ee;
+  --red: #d8331f;           /* Bauhaus red */
+  --yellow: #f5c518;        /* Bauhaus yellow */
+  --blue: #1f3fa3;          /* Bauhaus blue */
+  --rule: 2px;
+  --rule-thick: 4px;
+  --grid-line: rgba(10,10,10,0.06);
+
+  --display: "Archivo Black", "Druk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "cv11";
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Faint construction grid behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: 0;
+  opacity: 1;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Type */
+.display {
+  font-family: var(--display);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+.mono { font-family: var(--mono); font-feature-settings: "ss01" off; letter-spacing: -0.01em; }
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Layout primitives */
+.frame {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 720px) {
+  .frame { padding: 0 20px; }
+}
+
+.section {
+  position: relative;
+  padding: 120px 0 80px;
+  border-top: var(--rule-thick) solid var(--ink);
+  background: var(--bg);
+  z-index: 1;
+}
+.section:first-of-type { border-top: 0; }
+
+.section-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 56px;
+  border-bottom: var(--rule) solid var(--ink);
+  padding-bottom: 12px;
+}
+.section-tag .num {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.section-tag .name {
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.section-tag .meta {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* Mechanical hover */
+.mech {
+  transition: transform 80ms steps(2, end), background 80ms steps(2, end), color 80ms steps(2, end);
+}
+.mech:hover {
+  transform: translate(-2px, -2px);
+}
+
+/* Brutalist button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: var(--rule) solid var(--ink);
+  cursor: default;
+  position: relative;
+}
+.btn:hover {
+  background: var(--red);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.btn .arrow { display: inline-block; transition: transform 80ms steps(2,end); }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* Color swatches */
+.sw-red { background: var(--red); }
+.sw-yel { background: var(--yellow); }
+.sw-blu { background: var(--blue); }
+.sw-ink { background: var(--ink); }
+
+/* Marquee for hero ticker */
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Type-on cursor */
+.caret::after {
+  content: "▍";
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.9s steps(2, end) infinite;
+  color: var(--red);
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Geometric loader: line draw */
+@keyframes draw {
+  from { stroke-dashoffset: var(--len, 1000); }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms cubic-bezier(.2,.6,.2,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Selection */
+::selection { background: var(--yellow); color: var(--ink); }
+
+/* Card grid base */
+.grid {
+  display: grid;
+  gap: 0;
+}
+
+/* Big type sizing */
+.h-mega { font-size: clamp(80px, 16vw, 260px); }
+.h-1 { font-size: clamp(48px, 7vw, 120px); }
+.h-2 { font-size: clamp(32px, 4vw, 64px); }
+.h-3 { font-size: clamp(22px, 2.4vw, 36px); }
+
+/* Utility */
+.flex { display: flex; }
+.col  { flex-direction: column; }
+.between { justify-content: space-between; }
+.center { align-items: center; }
+.gap-8 { gap: 8px; } .gap-12 { gap: 12px; } .gap-16 { gap: 16px; }
+.gap-24 { gap: 24px; } .gap-48 { gap: 48px; }
+.full { width: 100%; }
+.rel { position: relative; }
+.abs { position: absolute; }
+.uppercase { text-transform: uppercase; }
+.thin-rule { border-bottom: var(--rule) solid var(--ink); }
