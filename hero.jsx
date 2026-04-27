@@ -56,15 +56,15 @@ const Hero = () => {
       flexDirection: "column",
     }}>
       {/* Top bar */}
-      <div className="flex between center" style={{ position: "relative", zIndex: 5 }}>
-        <div className="flex center gap-12">
+      <div className="hero-top flex between center" style={{ position: "relative", zIndex: 5 }}>
+        <div className="hero-brand flex center gap-12">
           <Mark size={36}/>
-          <div className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+          <div className="hero-brand-text mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
             Jeanmcdowell.com<br/>
             <span style={{ opacity: 0.5 }}>Established 2026</span>
           </div>
         </div>
-        <nav className="flex gap-24 mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+        <nav className="hero-nav flex gap-24 mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
           <a href="#about" className="mech">01 / About</a>
           <a href="#work" className="mech">02 / Work</a>
           <a href="#capabilities" className="mech">03 / Capabilities</a>
@@ -92,19 +92,20 @@ const Hero = () => {
             transitionDelay: settled ? `${i * 60}ms` : "0ms",
             opacity: settled ? 1 : 0,
           };
-          if (s.kind === "circle") return <Circle key={i} size={s.size} fill={s.color} style={common}/>;
-          if (s.kind === "square") return <Square key={i} size={s.size} fill={s.color} style={common}/>;
-          if (s.kind === "triangle") return <Triangle key={i} size={s.size} fill={s.color} style={common}/>;
-          if (s.kind === "quarter") return <QuarterCircle key={i} size={s.size} fill={s.color} style={common}/>;
-          if (s.kind === "half")    return <HalfCircle key={i} size={s.size} fill={s.color} style={common}/>;
-          if (s.kind === "target")  return <Target key={i} size={s.size} color={s.color} style={common}/>;
-          if (s.kind === "bar")     return <div key={i} style={{ ...common, width: s.size, height: s.height, background: s.color }}/>;
+          const shapeProps = { key: i, className: `hero-shape hero-shape-${i + 1}`, "data-kind": s.kind };
+          if (s.kind === "circle") return <Circle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
+          if (s.kind === "square") return <Square {...shapeProps} size={s.size} fill={s.color} style={common}/>;
+          if (s.kind === "triangle") return <Triangle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
+          if (s.kind === "quarter") return <QuarterCircle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
+          if (s.kind === "half")    return <HalfCircle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
+          if (s.kind === "target")  return <Target {...shapeProps} size={s.size} color={s.color} style={common}/>;
+          if (s.kind === "bar")     return <div {...shapeProps} style={{ ...common, width: s.size, height: s.height, background: s.color }}/>;
           return null;
         })}
       </div>
 
       {/* Headline */}
-      <div style={{
+      <div className="hero-copy" style={{
         position: "relative", zIndex: 4,
         marginTop: "min(8vh, 64px)",
         marginBottom: 56,
@@ -113,7 +114,7 @@ const Hero = () => {
         gap: 0,
         flex: "1 0 auto",
       }}>
-        <div className="display h-mega" style={{
+        <div className="hero-title display h-mega" style={{
           color: "var(--ink)",
           mixBlendMode: "multiply",
         }}>
@@ -130,14 +131,14 @@ const Hero = () => {
           <SplitLine text="DOWELL." delay={800}/>
         </div>
 
-        <div style={{
+        <div className="hero-intro-grid" style={{
           marginTop: 40,
           display: "grid",
           gridTemplateColumns: "minmax(260px, 1fr) auto",
           gap: 48,
           alignItems: "end",
         }}>
-          <div className="reveal in" style={{
+          <div className="hero-intro reveal in" style={{
             maxWidth: 540,
             fontSize: 18,
             lineHeight: 1.4,
@@ -154,7 +155,7 @@ const Hero = () => {
             creative advertising, and PVOD strategy across independent and major studio releases. Built the marketing engine behind <strong>John Wick</strong>, <strong>The Artist</strong>, and a long list of prestige titles.
           </div>
 
-          <div className="flex col gap-12" style={{
+          <div className="hero-actions flex col gap-12" style={{
             opacity: stage >= 2 ? 1 : 0,
             transform: stage >= 2 ? "none" : "translateY(20px)",
             transition: "all 700ms cubic-bezier(.2,.8,.2,1) 1300ms",
@@ -183,7 +184,7 @@ const SplitLine = ({ text, delay = 0, inline = false, trailing = null }) => {
     return () => clearTimeout(t);
   }, [delay]);
   return (
-    <div style={{ display: inline ? "inline-flex" : "block", overflow: "visible", lineHeight: 0.85, alignItems: "baseline" }}>
+    <div className="split-line" style={{ display: inline ? "inline-flex" : "block", overflow: "visible", lineHeight: 0.85, alignItems: "baseline" }}>
       {text.split("").map((ch, i) => (
         <span key={i} style={{
           display: "inline-block",

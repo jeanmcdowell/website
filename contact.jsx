@@ -85,7 +85,7 @@ const Contact = () => {
 };
 
 const Footer = () => (
-  <div style={{
+  <div className="site-footer" style={{
     marginTop: 80,
     borderTop: "2px solid var(--paper)",
     padding: "20px 48px 0",
