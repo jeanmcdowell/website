@@ -1,5 +1,4 @@
 // Hero - name as monument, geometric composition that assembles on load.
-
 const Hero = () => {
   const [stage, setStage] = React.useState(0); // 0 = pre, 1 = shapes settled, 2 = type in
   const wrapRef = React.useRef(null);
@@ -26,22 +25,14 @@ const Hero = () => {
   // Each shape: a final position; pre-stage shoves it offscreen in a direction
   // values are PERCENT relative to hero box.
   const shapes = [
-    // big red circle, top-right quadrant
-    { kind: "circle", color: "var(--red)",   size: 360, top: "8%",  left: "62%", from: { x: 600, y: -600 }, depth: 0.6 },
-    // yellow square mid-left
-    { kind: "square", color: "var(--yellow)", size: 220, top: "48%", left: "6%",  from: { x: -800, y: 0 }, rot: 0, depth: 1.2 },
-    // blue triangle bottom-center
+    { kind: "circle", color: "var(--red)", size: 360, top: "8%", left: "62%", from: { x: 600, y: -600 }, depth: 0.6 },
+    { kind: "square", color: "var(--yellow)", size: 220, top: "48%", left: "6%", from: { x: -800, y: 0 }, rot: 0, depth: 1.2 },
     { kind: "triangle", color: "var(--blue)", size: 280, top: "55%", left: "38%", from: { x: 0, y: 800 }, rot: 12, depth: 0.9 },
-    // small ink quarter circle top-left
-    { kind: "quarter", color: "var(--ink)",  size: 140, top: "0%",  left: "0%",   from: { x: -400, y: -400 }, rot: 0, depth: 1.5 },
-    // small red half circle top-center
-    { kind: "half",   color: "var(--red)",   size: 120, top: "2%",  left: "44%",  from: { x: 0, y: -500 }, rot: 180, depth: 1.8 },
-    // small blue circle bottom-right
-    { kind: "circle", color: "var(--blue)",  size: 80,  top: "78%", left: "88%",  from: { x: 600, y: 0 }, depth: 2.2 },
-    // outline target overlapping triangle
-    { kind: "target", color: "var(--ink)",   size: 180, top: "62%", left: "70%",  from: { x: 800, y: 800 }, depth: 0.7 },
-    // small yellow bar
-    { kind: "bar",    color: "var(--yellow)",size: 280, height: 10, top: "30%", left: "72%", from: { x: 1000, y: 0 }, rot: 18, depth: 1.4 },
+    { kind: "quarter", color: "var(--ink)", size: 140, top: "0%", left: "0%", from: { x: -400, y: -400 }, rot: 0, depth: 1.5 },
+    { kind: "half", color: "var(--red)", size: 120, top: "2%", left: "44%", from: { x: 0, y: -500 }, rot: 180, depth: 1.8 },
+    { kind: "circle", color: "var(--blue)", size: 80, top: "78%", left: "88%", from: { x: 600, y: 0 }, depth: 2.2 },
+    { kind: "target", color: "var(--ink)", size: 180, top: "62%", left: "70%", from: { x: 800, y: 800 }, depth: 0.7 },
+    { kind: "bar", color: "var(--yellow)", size: 280, height: 10, top: "30%", left: "72%", from: { x: 1000, y: 0 }, rot: 18, depth: 1.4 },
   ];
 
   return (
@@ -60,16 +51,15 @@ const Hero = () => {
         <div className="hero-brand flex center gap-12">
           <Mark size={36}/>
           <div className="hero-brand-text mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-            Jeanmcdowell.com<br/>
-            <span style={{ opacity: 0.5 }}>Established 2026</span>
+            <span className="hero-brand-name">Jeanmcdowell.com</span>
+            <span className="hero-brand-tagline" style={{ opacity: 0.5 }}>Established 2026</span>
           </div>
         </div>
         <nav className="hero-nav flex gap-24 mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
           <a href="#about" className="mech">01 / About</a>
           <a href="#work" className="mech">02 / Work</a>
           <a href="#capabilities" className="mech">03 / Capabilities</a>
-          <a href="#backlot" className="mech">04 / Backlot</a>
-          <a href="#contact" className="mech">05 / Contact</a>
+          <a href="#contact" className="mech">04 / Contact</a>
         </nav>
       </div>
 
@@ -97,9 +87,9 @@ const Hero = () => {
           if (s.kind === "square") return <Square {...shapeProps} size={s.size} fill={s.color} style={common}/>;
           if (s.kind === "triangle") return <Triangle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
           if (s.kind === "quarter") return <QuarterCircle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
-          if (s.kind === "half")    return <HalfCircle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
-          if (s.kind === "target")  return <Target {...shapeProps} size={s.size} color={s.color} style={common}/>;
-          if (s.kind === "bar")     return <div {...shapeProps} style={{ ...common, width: s.size, height: s.height, background: s.color }}/>;
+          if (s.kind === "half") return <HalfCircle {...shapeProps} size={s.size} fill={s.color} style={common}/>;
+          if (s.kind === "target") return <Target {...shapeProps} size={s.size} color={s.color} style={common}/>;
+          if (s.kind === "bar") return <div {...shapeProps} style={{ ...common, width: s.size, height: s.height, background: s.color }}/>;
           return null;
         })}
       </div>
@@ -134,14 +124,14 @@ const Hero = () => {
         <div className="hero-intro-grid" style={{
           marginTop: 40,
           display: "grid",
-          gridTemplateColumns: "minmax(260px, 1fr) auto",
+          gridTemplateColumns: "minmax(260px, 1.4fr) auto",
           gap: 48,
           alignItems: "end",
         }}>
           <div className="hero-intro reveal in" style={{
-            maxWidth: 540,
-            fontSize: 18,
-            lineHeight: 1.4,
+            maxWidth: 620,
+            fontSize: 17,
+            lineHeight: 1.45,
             transitionDelay: "1100ms",
             opacity: stage >= 2 ? 1 : 0,
             transform: stage >= 2 ? "none" : "translateY(20px)",
@@ -150,9 +140,12 @@ const Hero = () => {
             <span className="eyebrow" style={{ display: "block", marginBottom: 14, color: "var(--red)" }}>
               ▍Theatrical Marketing & Distribution
             </span>
-            Twenty years building global film campaigns,{" "}
-            <em style={{ fontStyle: "normal", background: "var(--yellow)", padding: "0 6px" }}>P&amp;A budgets</em>,
-            creative advertising, and PVOD strategy across independent and major studio releases. Built the marketing engine behind <strong>John Wick</strong>, <strong>The Artist</strong>, and a long list of prestige titles.
+            Theatrical marketing across six studios and an agency practice, including <strong>The Weinstein Company</strong>, <strong>Miramax</strong>, <strong>Lionsgate</strong>, and <strong>Brigade Marketing</strong>.{" "}
+            <em style={{ fontStyle: "normal", background: "var(--yellow)", padding: "0 6px" }}>200+ films marketed.</em>{" "}
+            Franchise work on <strong>John Wick</strong>, <strong>The Hunger Games</strong>, and <strong>Divergent</strong>. Awards work on <strong>La La Land</strong>, <strong>The Artist</strong>, and <strong>The Holdovers</strong>.
+            <span style={{ display: "block", marginTop: 14 }}>
+              Open to senior marketing roles at studios, streamers, and specialty distributors.
+            </span>
           </div>
 
           <div className="hero-actions flex col gap-12" style={{
@@ -163,8 +156,11 @@ const Hero = () => {
             <a href="#contact" className="btn mech">
               Get in touch <span className="arrow">→</span>
             </a>
-            <a href="#work" className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", textAlign: "right" }}>
-              ↓ Scroll · Twenty Years on File
+            <a href="#work" className="mech mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", textAlign: "right" }}>
+              See the Work ↓
+            </a>
+            <a href="#work" className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", textAlign: "right", opacity: 0.6 }}>
+              ↓ Scroll · 200+ Films on File
             </a>
           </div>
         </div>
@@ -191,7 +187,7 @@ const SplitLine = ({ text, delay = 0, inline = false, trailing = null }) => {
           transform: shown ? "translateY(0)" : "translateY(0.9em)",
           opacity: shown ? 1 : 0,
           transition: `transform 600ms cubic-bezier(.2,.8,.2,1) ${i * 35}ms, opacity 400ms ease ${i * 35}ms`,
-        }}>{ch === " " ? "\u00A0" : ch}</span>
+        }}>{ch === " " ? " " : ch}</span>
       ))}
       {trailing}
     </div>
@@ -200,26 +196,33 @@ const SplitLine = ({ text, delay = 0, inline = false, trailing = null }) => {
 
 const Ticker = ({ stage }) => {
   const items = [
-    "P&A STRATEGY",
+    "200+ FILMS",
     "★",
     "JOHN WICK",
     "●",
-    "THE ARTIST",
+    "THE HUNGER GAMES",
     "■",
-    "MIRAMAX",
+    "DIVERGENT",
     "▲",
     "LIONSGATE",
     "●",
-    "BRIARCLIFF",
+    "MIRAMAX",
     "■",
+    "WEINSTEIN CO.",
+    "▲",
     "BRIGADE MARKETING",
+    "★",
+    "LA LA LAND",
+    "●",
+    "THE ARTIST",
+    "■",
+    "THE HOLDOVERS",
     "▲",
     "AWARDS POSITIONING",
     "★",
-    "PVOD STRATEGY",
-    "●",
   ];
   const row = [...items, ...items];
+
   return (
     <div style={{
       position: "relative",
