@@ -29,10 +29,10 @@ const About = () => {
 
   const metrics = [
     { k: "Films marketed", v: "200+", big: true },
-    { k: "Studios", v: "06", big: true },
+    { k: "Range", v: "Awards → Tentpole", big: false },
     { k: "Tentpoles", v: "John Wick · Hunger Games · Divergent", big: false },
     { k: "Prestige", v: "La La Land · The Artist · The Holdovers", big: false },
-    { k: "Franchise", v: "Halloween · John Wick · Now You See Me", big: false },
+    { k: "Franchise", v: "Halloween · Now You See Me", big: false },
     { k: "Formats", v: "Theatrical · Streaming · PVOD · Platform", big: false },
   ];
 
