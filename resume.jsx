@@ -13,6 +13,7 @@ const CAMPAIGNS = [
       "Allegiant",
       "The Expendables 3",
       "Power Rangers",
+      "Now You See Me",
       "Now You See Me 2",
       "The Beekeeper",
       "Halloween Kills",
@@ -25,27 +26,29 @@ const CAMPAIGNS = [
       "La La Land",
       "The Artist",
       "The Holdovers",
+      "Sicario",
       "Wonder",
       "Django Unchained",
       "The Iron Lady",
       "My Week with Marilyn",
       "Bombshell",
-      "The Big Sick",
       "Blindspotting",
     ],
   },
   {
     h: "Genre & Commercial",
     items: [
+      "Knives Out",
       "The Gentlemen",
       "Wrath of Man",
       "A Simple Favor",
       "The Hitman's Bodyguard",
       "Operation Fortune",
-      "The Commuter",
+      "Boo! A Madea Halloween",
+      "A Madea Family Funeral",
       "Acrimony",
+      "The Commuter",
       "Robin Hood",
-      "Strange Darling",
       "The Home",
       "Here",
     ],
@@ -53,13 +56,10 @@ const CAMPAIGNS = [
   {
     h: "Independent & Specialty",
     items: [
-      "The Holdovers",
       "Strange Darling",
       "Confess, Fletch",
       "Uncle Frank",
       "Old Dads",
-      "The Big Sick",
-      "Blindspotting",
     ],
   },
 ];
@@ -145,7 +145,7 @@ const Resume = () => {
             display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
           }}>
             <span>▍Selected Campaigns</span>
-            <span style={{ opacity: 0.6 }}>200+ Films · 06 Studios · One Agency</span>
+            <span style={{ opacity: 0.6 }}>200+ Films · From Awards to Tentpole</span>
           </div>
           <div className="selected-campaigns-grid" style={{
             display: "grid",
@@ -190,7 +190,7 @@ const Resume = () => {
           fontSize: 11, marginTop: 24, letterSpacing: "0.12em",
           textTransform: "uppercase", opacity: 0.6,
         }}>
-          ▍200+ Films · Six Studios · One Agency · Full CV on Request
+          ▍200+ Films · From Awards to Tentpole · Full CV on Request
         </div>
       </div>
     </section>

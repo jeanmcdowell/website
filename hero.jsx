@@ -1,6 +1,7 @@
 // Hero - name as monument, geometric composition that assembles on load.
 const Hero = () => {
   const [stage, setStage] = React.useState(0); // 0 = pre, 1 = shapes settled, 2 = type in
+  const [navOpen, setNavOpen] = React.useState(false);
   const wrapRef = React.useRef(null);
   const [parallax, setParallax] = React.useState({ x: 0, y: 0 });
 
@@ -55,12 +56,34 @@ const Hero = () => {
             <span className="hero-brand-tagline" style={{ opacity: 0.5 }}>Established 2026</span>
           </div>
         </div>
-        <nav className="hero-nav flex gap-24 mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-          <a href="#about" className="mech">01 / About</a>
-          <a href="#work" className="mech">02 / Work</a>
-          <a href="#capabilities" className="mech">03 / Capabilities</a>
-          <a href="#contact" className="mech">04 / Contact</a>
-        </nav>
+        <div className="hero-nav-wrap" style={{ position: "relative" }}>
+          <button
+            className="hero-nav-toggle mono"
+            aria-label={navOpen ? "Close menu" : "Open menu"}
+            aria-expanded={navOpen}
+            onClick={() => setNavOpen(!navOpen)}
+            style={{
+              background: "var(--paper)",
+              border: "2px solid var(--ink)",
+              color: "var(--ink)",
+              padding: "8px 14px",
+              fontSize: 11,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              cursor: "pointer",
+              minHeight: 44,
+              alignItems: "center",
+              display: "none",
+            }}>
+            {navOpen ? "Close ✕" : "Menu ☰"}
+          </button>
+          <nav className={"hero-nav flex gap-24 mono " + (navOpen ? "open" : "")} style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
+            <a href="#about" className="mech" onClick={() => setNavOpen(false)}>01 / About</a>
+            <a href="#work" className="mech" onClick={() => setNavOpen(false)}>02 / Work</a>
+            <a href="#capabilities" className="mech" onClick={() => setNavOpen(false)}>03 / Capabilities</a>
+            <a href="#contact" className="mech" onClick={() => setNavOpen(false)}>04 / Contact</a>
+          </nav>
+        </div>
       </div>
 
       {/* Geometric composition layer */}
@@ -118,7 +141,7 @@ const Hero = () => {
               }}/>
             </span>
           }/>
-          <SplitLine text="DOWELL." delay={800}/>
+          <SplitLine text="DOWELL" delay={800}/>
         </div>
 
         <div className="hero-intro-grid" style={{
@@ -140,7 +163,7 @@ const Hero = () => {
             <span className="eyebrow" style={{ display: "block", marginBottom: 14, color: "var(--red)" }}>
               ▍Theatrical Marketing & Distribution
             </span>
-            Theatrical marketing across six studios and an agency practice, including <strong>The Weinstein Company</strong>, <strong>Miramax</strong>, <strong>Lionsgate</strong>, and <strong>Brigade Marketing</strong>.{" "}
+            Theatrical marketing across studios and an agency practice, including <strong>The Weinstein Company</strong>, <strong>Miramax</strong>, <strong>Lionsgate</strong>, and <strong>Brigade Marketing</strong>.{" "}
             <em style={{ fontStyle: "normal", background: "var(--yellow)", padding: "0 6px" }}>200+ films marketed.</em>{" "}
             Franchise work on <strong>John Wick</strong>, <strong>The Hunger Games</strong>, and <strong>Divergent</strong>. Awards work on <strong>La La Land</strong>, <strong>The Artist</strong>, and <strong>The Holdovers</strong>.
             <span style={{ display: "block", marginTop: 14 }}>
@@ -165,9 +188,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Ticker at bottom */}
-      <Ticker stage={stage}/>
     </header>
   );
 };
@@ -190,70 +210,6 @@ const SplitLine = ({ text, delay = 0, inline = false, trailing = null }) => {
         }}>{ch === " " ? " " : ch}</span>
       ))}
       {trailing}
-    </div>
-  );
-};
-
-const Ticker = ({ stage }) => {
-  const items = [
-    "200+ FILMS",
-    "★",
-    "JOHN WICK",
-    "●",
-    "THE HUNGER GAMES",
-    "■",
-    "DIVERGENT",
-    "▲",
-    "LIONSGATE",
-    "●",
-    "MIRAMAX",
-    "■",
-    "WEINSTEIN CO.",
-    "▲",
-    "BRIGADE MARKETING",
-    "★",
-    "LA LA LAND",
-    "●",
-    "THE ARTIST",
-    "■",
-    "THE HOLDOVERS",
-    "▲",
-    "AWARDS POSITIONING",
-    "★",
-  ];
-  const row = [...items, ...items];
-
-  return (
-    <div style={{
-      position: "relative",
-      marginLeft: -48,
-      marginRight: -48,
-      borderTop: "2px solid var(--ink)",
-      borderBottom: "2px solid var(--ink)",
-      overflow: "hidden",
-      whiteSpace: "nowrap",
-      zIndex: 4,
-      background: "var(--ink)",
-      color: "var(--paper)",
-      opacity: stage >= 2 ? 1 : 0,
-      transition: "opacity 600ms ease 1500ms",
-      flexShrink: 0,
-    }}>
-      <div style={{
-        display: "inline-block",
-        animation: "scroll-x 40s linear infinite",
-        padding: "12px 0",
-        fontFamily: "var(--display)",
-        fontSize: 14,
-        letterSpacing: "0.12em",
-      }}>
-        {row.map((it, i) => (
-          <span key={i} style={{
-            margin: "0 24px",
-            color: it === "★" ? "var(--yellow)" : it === "●" ? "var(--red)" : it === "■" ? "var(--blue)" : it === "▲" ? "var(--paper)" : "var(--paper)"
-          }}>{it}</span>
-        ))}
-      </div>
     </div>
   );
 };
