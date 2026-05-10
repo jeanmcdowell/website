@@ -1,7 +1,8 @@
 // Contact - oversized poster-style send-off
-
 const Contact = () => {
-  const [hovered, setHovered] = React.useState(false);
+  const [hoverEmail, setHoverEmail] = React.useState(false);
+  const [hoverLinked, setHoverLinked] = React.useState(false);
+
   return (
     <section id="contact" className="section" style={{
       background: "var(--ink)",
@@ -10,7 +11,7 @@ const Contact = () => {
     }}>
       <div className="frame">
         <div className="section-tag" style={{ borderBottom: "2px solid var(--paper)" }}>
-          <span className="num" style={{ color: "var(--paper)" }}>§ 06</span>
+          <span className="num" style={{ color: "var(--paper)" }}>§ 04</span>
           <span className="name" style={{ color: "var(--paper)" }}>Contact</span>
           <span className="meta" style={{ color: "var(--paper)" }}>Open to inquiries</span>
         </div>
@@ -32,26 +33,53 @@ const Contact = () => {
 
             <a
               href="mailto:jean@jeanmcdowell.com"
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
+              onMouseEnter={() => setHoverEmail(true)}
+              onMouseLeave={() => setHoverEmail(false)}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 24,
                 marginTop: 56,
                 padding: "28px 32px",
-                background: hovered ? "var(--red)" : "var(--paper)",
-                color: hovered ? "var(--paper)" : "var(--ink)",
+                background: hoverEmail ? "var(--red)" : "var(--paper)",
+                color: hoverEmail ? "var(--paper)" : "var(--ink)",
                 border: "3px solid var(--paper)",
                 fontFamily: "var(--display)",
                 fontSize: 28,
                 letterSpacing: "-0.01em",
                 transition: "background 80ms steps(2,end), color 80ms steps(2,end), transform 80ms steps(2,end)",
-                transform: hovered ? "translate(-3px, -3px)" : "none",
-                boxShadow: hovered ? "8px 8px 0 var(--red), 8px 8px 0 1.5px var(--paper)" : "none",
+                transform: hoverEmail ? "translate(-3px, -3px)" : "none",
+                boxShadow: hoverEmail ? "8px 8px 0 var(--red), 8px 8px 0 1.5px var(--paper)" : "none",
               }}>
               jean@jeanmcdowell.com
-              <span style={{ display: "inline-block", transform: hovered ? "translateX(6px)" : "none", transition: "transform 80ms steps(2,end)" }}>→</span>
+              <span style={{ display: "inline-block", transform: hoverEmail ? "translateX(6px)" : "none", transition: "transform 80ms steps(2,end)" }}>→</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/jeanmcdowell"
+              target="_blank"
+              rel="noopener noreferrer"
+              onMouseEnter={() => setHoverLinked(true)}
+              onMouseLeave={() => setHoverLinked(false)}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 24,
+                marginTop: 16,
+                marginLeft: 0,
+                padding: "20px 32px",
+                background: hoverLinked ? "var(--blue)" : "transparent",
+                color: hoverLinked ? "var(--paper)" : "var(--paper)",
+                border: "3px solid var(--paper)",
+                fontFamily: "var(--display)",
+                fontSize: 20,
+                letterSpacing: "-0.005em",
+                transition: "background 80ms steps(2,end), color 80ms steps(2,end), transform 80ms steps(2,end)",
+                transform: hoverLinked ? "translate(-3px, -3px)" : "none",
+                boxShadow: hoverLinked ? "8px 8px 0 var(--blue), 8px 8px 0 1.5px var(--paper)" : "none",
+              }}>
+              linkedin.com/in/jeanmcdowell
+              <span style={{ display: "inline-block", transform: hoverLinked ? "translateX(6px)" : "none", transition: "transform 80ms steps(2,end)" }}>→</span>
             </a>
           </div>
 
@@ -64,9 +92,9 @@ const Contact = () => {
             borderTop: "2px solid var(--paper)",
           }}>
             {[
-              { k: "Best for", v: "Theatrical campaigns, fractional CMO, brand consulting." },
-              { k: "Based", v: "Los Angeles · open to remote." },
-              { k: "Response", v: "Same week, usually same day." },
+              { k: "Open to", v: "Senior marketing roles at studios, streamers, and specialty distributors." },
+              { k: "Based", v: "Los Angeles · open to relocation." },
+              { k: "Contact", v: "Best reached by email." },
             ].map((m, i) => (
               <div key={i}>
                 <div className="mono" style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", opacity: 0.55 }}>
@@ -78,7 +106,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
       <Footer/>
     </section>
   );
