@@ -29,7 +29,7 @@ const Hero = () => {
     { kind: "circle", color: "var(--red)", size: 360, top: "8%", left: "62%", from: { x: 600, y: -600 }, depth: 0.6 },
     { kind: "square", color: "var(--yellow)", size: 220, top: "48%", left: "6%", from: { x: -800, y: 0 }, rot: 0, depth: 1.2 },
     { kind: "triangle", color: "var(--blue)", size: 280, top: "55%", left: "38%", from: { x: 0, y: 800 }, rot: 12, depth: 0.9 },
-    { kind: "quarter", color: "var(--ink)", size: 140, top: "0%", left: "0%", from: { x: -400, y: -400 }, rot: 0, depth: 1.5 },
+    { kind: "quarter", color: "var(--bg)", size: 140, top: "0%", left: "0%", from: { x: -400, y: -400 }, rot: 0, depth: 1.5 },
     { kind: "half", color: "var(--red)", size: 120, top: "2%", left: "44%", from: { x: 0, y: -500 }, rot: 180, depth: 1.8 },
     { kind: "circle", color: "var(--blue)", size: 80, top: "78%", left: "88%", from: { x: 600, y: 0 }, depth: 2.2 },
     { kind: "target", color: "var(--ink)", size: 180, top: "62%", left: "70%", from: { x: 800, y: 800 }, depth: 0.7 },
@@ -53,7 +53,6 @@ const Hero = () => {
           <Mark size={36}/>
           <div className="hero-brand-text mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
             <span className="hero-brand-name">Jeanmcdowell.com</span>
-            <span className="hero-brand-tagline" style={{ opacity: 0.5 }}>Established 2026</span>
           </div>
         </div>
         <div className="hero-nav-wrap" style={{ position: "relative" }}>
