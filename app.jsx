@@ -1,19 +1,17 @@
 // App shell - wires sections together, owns Tweaks state.
-
 const PALETTES = {
   bauhaus: { "--bg": "#f2ece1", "--paper": "#fbf7ee", "--ink": "#0a0a0a", "--red": "#d8331f", "--yellow": "#f5c518", "--blue": "#1f3fa3" },
-  noir:    { "--bg": "#111111", "--paper": "#f4eee2", "--ink": "#f4eee2", "--red": "#ff3b1f", "--yellow": "#ffd400", "--blue": "#3661ff" },
-  dessau:  { "--bg": "#ece6d4", "--paper": "#faf3df", "--ink": "#1a1a1a", "--red": "#c0271b", "--yellow": "#e8a83a", "--blue": "#0e3b75" },
-  swiss:   { "--bg": "#ffffff", "--paper": "#f5f5f5", "--ink": "#0a0a0a", "--red": "#e30613", "--yellow": "#0a0a0a", "--blue": "#0a0a0a" },
-  albers:  { "--bg": "#efe6cf", "--paper": "#f6efd9", "--ink": "#2a1a0e", "--red": "#c93a1a", "--yellow": "#e9b32f", "--blue": "#5b3b1c" },
+  noir: { "--bg": "#111111", "--paper": "#f4eee2", "--ink": "#f4eee2", "--red": "#ff3b1f", "--yellow": "#ffd400", "--blue": "#3661ff" },
+  dessau: { "--bg": "#ece6d4", "--paper": "#faf3df", "--ink": "#1a1a1a", "--red": "#c0271b", "--yellow": "#e8a83a", "--blue": "#0e3b75" },
+  swiss: { "--bg": "#ffffff", "--paper": "#f5f5f5", "--ink": "#0a0a0a", "--red": "#e30613", "--yellow": "#0a0a0a", "--blue": "#0a0a0a" },
+  albers: { "--bg": "#efe6cf", "--paper": "#f6efd9", "--ink": "#2a1a0e", "--red": "#c93a1a", "--yellow": "#e9b32f", "--blue": "#5b3b1c" },
 };
-
 const TYPE_PAIRS = {
   archivo: { "--display": "'Archivo Black', 'Helvetica Neue', sans-serif", "--body": "'Inter', sans-serif" },
-  druk:    { "--display": "'Anton', 'Druk', 'Helvetica Neue', sans-serif", "--body": "'Inter', sans-serif" },
-  futura:  { "--display": "'Bowlby One', 'Futura', sans-serif", "--body": "'Work Sans', sans-serif" },
-  mono:    { "--display": "'Space Mono', monospace", "--body": "'Space Mono', monospace" },
-  slab:    { "--display": "'Alfa Slab One', serif", "--body": "'IBM Plex Sans', sans-serif" },
+  druk: { "--display": "'Anton', 'Druk', 'Helvetica Neue', sans-serif", "--body": "'Inter', sans-serif" },
+  futura: { "--display": "'Bowlby One', 'Futura', sans-serif", "--body": "'Work Sans', sans-serif" },
+  mono: { "--display": "'Space Mono', monospace", "--body": "'Space Mono', monospace" },
+  slab: { "--display": "'Alfa Slab One', serif", "--body": "'IBM Plex Sans', sans-serif" },
 };
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -41,7 +39,6 @@ const App = () => {
       <About/>
       <Resume/>
       <Capabilities/>
-      <Backlot/>
       <Contact/>
 
       <TweaksPanel title="Tweaks">
@@ -58,10 +55,10 @@ const App = () => {
           value={t.typePair}
           options={[
             { value: "archivo", label: "Archivo Black / Inter" },
-            { value: "druk",    label: "Anton / Inter" },
-            { value: "futura",  label: "Bowlby / Work Sans" },
-            { value: "mono",    label: "Space Mono everything" },
-            { value: "slab",    label: "Alfa Slab / Plex Sans" },
+            { value: "druk", label: "Anton / Inter" },
+            { value: "futura", label: "Bowlby / Work Sans" },
+            { value: "mono", label: "Space Mono everything" },
+            { value: "slab", label: "Alfa Slab / Plex Sans" },
           ]}
           onChange={(v) => setTweak("typePair", v)}
         />
