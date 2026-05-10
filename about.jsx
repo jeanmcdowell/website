@@ -111,10 +111,9 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right column: a stamp */}
+          {/* Right column: location + availability */}
           <div style={{ position: "sticky", top: 40 }}>
-            <Stamp/>
-            <div className="mono" style={{ fontSize: 11, lineHeight: 1.6, marginTop: 24, opacity: 0.7 }}>
+            <div className="mono" style={{ fontSize: 11, lineHeight: 1.6, opacity: 0.7 }}>
               <div style={{ borderTop: "1px solid var(--ink)", paddingTop: 12 }}>
                 <div style={{ textTransform: "uppercase", letterSpacing: "0.14em" }}>Based</div>
                 <div style={{ marginTop: 4 }}>Los Angeles, CA</div>
@@ -130,27 +129,5 @@ const About = () => {
     </section>
   );
 };
-
-const Stamp = () => (
-  <div style={{
-    border: "3px solid var(--red)",
-    color: "var(--red)",
-    padding: "18px 22px",
-    transform: "rotate(-3deg)",
-    fontFamily: "var(--display)",
-    letterSpacing: "0.04em",
-    display: "inline-block",
-    background: "transparent",
-    position: "relative",
-  }}>
-    <div style={{ fontSize: 22, lineHeight: 1, textTransform: "uppercase" }}>Approved</div>
-    <div style={{ fontSize: 11, letterSpacing: "0.16em", marginTop: 6, fontFamily: "var(--mono)", textTransform: "uppercase" }}>For Theatrical · 2026</div>
-    <div style={{
-      position: "absolute", inset: -4,
-      border: "1px solid var(--red)",
-      pointerEvents: "none",
-    }}/>
-  </div>
-);
 
 Object.assign(window, { About });
