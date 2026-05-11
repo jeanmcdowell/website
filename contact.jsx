@@ -93,7 +93,7 @@ const Contact = () => {
           }}>
             {[
               { k: "Open to", v: "Senior marketing roles at studios, streamers, and specialty distributors." },
-              { k: "Based", v: "Los Angeles · open to relocation." },
+              { k: "Based", v: "Los Angeles." },
               { k: "Contact", v: "Best reached by email." },
             ].map((m, i) => (
               <div key={i}>
