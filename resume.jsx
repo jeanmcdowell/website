@@ -123,6 +123,18 @@ const ROLES = [
 
 const Resume = () => {
   const [hover, setHover] = React.useState(null);
+  const [campaignsVisible, setCampaignsVisible] = React.useState(false);
+  const campaignsRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!campaignsRef.current) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) setCampaignsVisible(true); });
+    }, { threshold: 0.2 });
+    obs.observe(campaignsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <section id="work" className="section" style={{ background: "var(--bg)" }}>
       <div className="frame">
@@ -147,7 +159,7 @@ const Resume = () => {
             <span>▍Selected Campaigns</span>
             <span style={{ opacity: 0.6 }}>200+ Films · From Awards to Tentpole</span>
           </div>
-          <div className="selected-campaigns-grid" style={{
+          <div ref={campaignsRef} className="selected-campaigns-grid" style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
           }}>
@@ -155,6 +167,9 @@ const Resume = () => {
               <div key={i} style={{
                 padding: "18px 18px 22px",
                 borderRight: "2px solid var(--ink)",
+                opacity: campaignsVisible ? 1 : 0,
+                transform: campaignsVisible ? "none" : "translateY(16px)",
+                transition: `opacity 500ms ease ${i * 120}ms, transform 600ms cubic-bezier(.2,.8,.2,1) ${i * 120}ms`,
               }}>
                 <div className="mono" style={{
                   fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase",
