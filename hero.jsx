@@ -131,15 +131,7 @@ const Hero = () => {
           mixBlendMode: "multiply",
         }}>
           <SplitLine text="JEAN" delay={500}/>
-          <SplitLine text="MC" delay={650} inline trailing={
-            <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 0.05em" }}>
-              <Circle size={140} fill="var(--red)" style={{
-                opacity: stage >= 2 ? 1 : 0,
-                transform: `translateY(${stage >= 2 ? 0 : 20}px)`,
-                transition: "all 600ms cubic-bezier(.2,.8,.2,1) 800ms",
-              }}/>
-            </span>
-          }/>
+          <SplitLine text="MC" delay={650}/>
           <SplitLine text="DOWELL" delay={800}/>
         </div>
 

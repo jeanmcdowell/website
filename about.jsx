@@ -3,7 +3,10 @@ const About = () => {
   const fullText = "200+ films marketed across studios, streamers, formats, and tentpoles. Built to ship.";
   const [typed, setTyped] = React.useState("");
   const [started, setStarted] = React.useState(false);
+  const [filmCount, setFilmCount] = React.useState(0);
+  const [statsTriggered, setStatsTriggered] = React.useState(false);
   const ref = React.useRef(null);
+  const metricsRef = React.useRef(null);
 
   React.useEffect(() => {
     if (!ref.current) return;
@@ -26,6 +29,32 @@ const About = () => {
   }, [started]);
 
   const isDone = typed.length === fullText.length;
+
+  // Stats grid: trigger "200+" counter when the metrics grid scrolls into view
+  React.useEffect(() => {
+    if (!metricsRef.current) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) setStatsTriggered(true); });
+    }, { threshold: 0.4 });
+    obs.observe(metricsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  React.useEffect(() => {
+    if (!statsTriggered) return;
+    const duration = 1400;
+    const start = performance.now();
+    let raf;
+    const tick = (now) => {
+      const elapsed = now - start;
+      const t = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setFilmCount(Math.round(eased * 200));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => raf && cancelAnimationFrame(raf);
+  }, [statsTriggered]);
 
   const metrics = [
     { k: "Films marketed", v: "200+", big: true },
@@ -83,7 +112,7 @@ const About = () => {
               I build marketing for films that need to perform, not films that need to look like they're performing. P&amp;A as a model, not a budget line. Creative reviewed frame by frame, not by deck. Audience segmentation, exhibitor relationships, and streaming-window strategy that survive opening weekend. The work is research-supported, not research-driven, and it's built for teams with real accountability across studios, agency, and emerging-studio environments.
             </p>
 
-            <div style={{
+            <div ref={metricsRef} style={{
               marginTop: 48,
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
@@ -105,7 +134,7 @@ const About = () => {
                     lineHeight: m.big ? 1 : 1.35,
                     fontFamily: m.big ? "var(--display)" : "var(--body)",
                     fontWeight: m.big ? 900 : 500,
-                  }}>{m.v}</div>
+                  }}>{m.k === "Films marketed" ? `${filmCount}+` : m.v}</div>
                 </div>
               ))}
             </div>
