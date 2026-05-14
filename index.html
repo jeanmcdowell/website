@@ -79,52 +79,89 @@
         "Franchise marketing",
         "Streaming windowing"
       ],
-      "hasOccupation": [
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Head of Theatrical Marketing",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Los Angeles"
+        },
+        "skills": "Theatrical marketing, P&A modeling, distribution strategy, audience segmentation, creative oversight"
+      },
+      "subjectOf": { "@id": "https://jeanmcdowell.com/#experience" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jeanmcdowell.com/#experience",
+      "name": "Professional experience",
+      "description": "Selected senior marketing roles across studios, specialty distributors, and agencies. Most recent first.",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 6,
+      "itemListElement": [
         {
-          "@type": "Occupation",
-          "name": "Head of Theatrical Marketing",
-          "occupationLocation": {
-            "@type": "City",
-            "name": "Los Angeles"
-          },
-          "skills": "Theatrical marketing, P&A modeling, distribution strategy, audience segmentation, creative oversight"
-        }
-      ],
-      "hasOccupationalCredential": [
-        {
-          "@type": "OrganizationRole",
-          "roleName": "Head of Theatrical Marketing",
-          "startDate": "2025",
-          "memberOf": { "@type": "Organization", "name": "Magenta Light Studios" }
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "OrganizationRole",
+            "roleName": "Head of Theatrical Marketing",
+            "startDate": "2025",
+            "description": "Standing up theatrical marketing for the studio's release slate — campaign architecture, P&A modeling, distribution alignment.",
+            "memberOf": { "@type": "Organization", "name": "Magenta Light Studios" }
+          }
         },
         {
-          "@type": "OrganizationRole",
-          "roleName": "Head of Marketing (Contract)",
-          "startDate": "2024",
-          "endDate": "2025",
-          "memberOf": { "@type": "Organization", "name": "Briarcliff Entertainment" }
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "OrganizationRole",
+            "roleName": "Head of Marketing, Contract",
+            "startDate": "2024",
+            "endDate": "2025",
+            "description": "End-to-end campaign leadership for independent theatrical releases. Strategy, creative, paid media, exhibitor.",
+            "memberOf": { "@type": "Organization", "name": "Briarcliff Entertainment" }
+          }
         },
         {
-          "@type": "OrganizationRole",
-          "roleName": "SVP Worldwide Marketing & Publicity",
-          "memberOf": { "@type": "Organization", "name": "Miramax" }
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "OrganizationRole",
+            "roleName": "SVP Worldwide Marketing & Publicity",
+            "description": "Recent slate across theatrical and short-window streaming — The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, Here. Day-and-date releases on Peacock and Amazon MGM. Library reactivation and global brand.",
+            "memberOf": { "@type": "Organization", "name": "Miramax" }
+          }
         },
         {
-          "@type": "OrganizationRole",
-          "roleName": "SVP Marketing; SVP Research & Strategy",
-          "memberOf": { "@type": "Organization", "name": "Lionsgate" }
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "OrganizationRole",
+            "roleName": "SVP Marketing; SVP Research & Strategy",
+            "description": "Tentpole and franchise leadership: John Wick, The Hunger Games, Divergent. Global day-and-date and platform releases across theatrical and home entertainment windows.",
+            "memberOf": { "@type": "Organization", "name": "Lionsgate" }
+          }
         },
         {
-          "@type": "OrganizationRole",
-          "roleName": "Vice President of Marketing",
-          "startDate": "2010",
-          "endDate": "2012",
-          "memberOf": { "@type": "Organization", "name": "The Weinstein Company" }
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "OrganizationRole",
+            "roleName": "Vice President of Marketing",
+            "startDate": "2010",
+            "endDate": "2012",
+            "description": "Awards positioning on The Artist (Best Picture), Django Unchained, The Iron Lady, My Week with Marilyn. Platform releases and prestige-tier creative oversight.",
+            "memberOf": { "@type": "Organization", "name": "The Weinstein Company" }
+          }
         },
         {
-          "@type": "OrganizationRole",
-          "roleName": "Co-Founder",
-          "memberOf": { "@type": "Organization", "name": "Brigade Marketing" }
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "OrganizationRole",
+            "roleName": "Co-Founder",
+            "description": "Co-founded the digital marketing agency for film campaigns. Built from one room to a full-service creative studio serving major studios and independents. 50+ film campaigns.",
+            "memberOf": { "@type": "Organization", "name": "Brigade Marketing" }
+          }
         }
       ]
     },
