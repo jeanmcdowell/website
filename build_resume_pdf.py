@@ -111,35 +111,17 @@ def build(path):
             "co": "Magenta Light Studios",
             "title": "Head of Theatrical Marketing",
             "period": "2025 — Present",
-            "note": "Building theatrical marketing infrastructure for the studio's release slate. "
-                    "Campaign frameworks, P&A planning, and distribution alignment.",
+            "note": "Standing up theatrical marketing for the studio's release slate — "
+                    "campaign architecture, P&A modeling, and distribution alignment.",
             "accent": RED,
         },
         {
             "co": "Briarcliff Entertainment",
             "title": "Head of Marketing (Contract)",
             "period": "2024 — 2025",
-            "note": "End-to-end campaign leadership for independent theatrical releases — "
-                    "strategy, creative, paid media, and exhibitor coordination.",
+            "note": "End-to-end campaign leadership for independent theatrical releases. "
+                    "Strategy, creative, paid media, exhibitor.",
             "accent": BLUE,
-        },
-        {
-            "co": "Brigade Marketing",
-            "title": "Co-Founder",
-            "period": "Co-Founded",
-            "note": "Co-founded a digital marketing agency for film campaigns. "
-                    "Grew from one room to a full-service creative studio serving major studios "
-                    "and independent distributors. Added 50+ film campaigns to the volume.",
-            "accent": YELLOW,
-        },
-        {
-            "co": "Lionsgate",
-            "title": "SVP Marketing  ·  SVP Research & Strategy",
-            "period": "Senior Tenure",
-            "note": "Tentpole and franchise campaigns including John Wick, The Hunger Games, and Divergent. "
-                    "Global day-and-date and platform releases across theatrical and home entertainment windows. "
-                    "Multi-territory launch coordination.",
-            "accent": INK,
         },
         {
             "co": "Miramax",
@@ -150,6 +132,24 @@ def build(path):
                     "Day-and-date and short-window streaming releases on Peacock and Amazon MGM. "
                     "Library reactivation and global brand work.",
             "accent": BLUE,
+        },
+        {
+            "co": "Brigade Marketing",
+            "title": "Co-Founder",
+            "period": "Co-Founded",
+            "note": "Co-founded a digital marketing agency for film campaigns. "
+                    "Grew from one room to a full-service creative studio serving major studios "
+                    "and independent distributors. 50+ film campaigns.",
+            "accent": YELLOW,
+        },
+        {
+            "co": "Lionsgate",
+            "title": "SVP Marketing  ·  SVP Research & Strategy",
+            "period": "Senior Tenure",
+            "note": "Tentpole and franchise campaigns: John Wick, The Hunger Games, Divergent. "
+                    "Global day-and-date and platform releases across theatrical and home entertainment windows. "
+                    "Multi-territory launch coordination.",
+            "accent": INK,
         },
         {
             "co": "The Weinstein Company",
