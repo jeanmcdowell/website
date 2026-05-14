@@ -44,10 +44,10 @@ const About = () => {
 
   const metrics = [
     { k: "Films marketed", v: "200+", big: true },
-    { k: "Range", v: "Awards → Tentpole" },
-    { k: "Tentpoles", v: "John Wick · Hunger Games · Divergent" },
-    { k: "Prestige", v: "La La Land · The Artist · The Holdovers" },
-    { k: "Franchise", v: "Halloween · Now You See Me" },
+    { k: "Range", v: "Awards to Tentpole" },
+    { k: "Tentpoles", v: "John Wick · Hunger Games · Tyler Perry" },
+    { k: "Prestige", v: "La La Land · The Artist · Hacksaw Ridge" },
+    { k: "P&A range", v: "Under $1M to $25M+" },
     { k: "Formats", v: "Theatrical · Streaming · PVOD · Platform" },
   ];
 
@@ -89,7 +89,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Executive marketing for films that have to perform. P&amp;A modeled as architecture, not a budget line. Creative reviewed frame-by-frame, not by deck. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
+              Title-level positioning and overarching campaign strategy, then execution across creative, media, publicity, partnerships, and distribution. P&amp;A modeled as architecture, not a budget line. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
             </p>
             <p style={{
               marginTop: 18,
@@ -97,7 +97,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Research-supported, not research-driven. Senior judgment, lean teams, real accountability across studio, agency, and emerging-studio environments.
+              Audience insight, performance data, and market judgment. Senior judgment, lean teams, real accountability across studio, specialty, and boutique environments.
             </p>
 
             <div ref={metricsRef} className="about-metrics" style={{
@@ -140,7 +140,7 @@ const About = () => {
               </div>
               <div style={{ borderTop: "1px solid var(--ink)", paddingTop: 12, marginTop: 16 }}>
                 <div style={{ textTransform: "uppercase", letterSpacing: "0.14em", opacity: 0.55 }}>Approach</div>
-                <div style={{ marginTop: 4 }}>Data-informed, not data-driven. Senior judgment. Lean accountable teams.</div>
+                <div style={{ marginTop: 4 }}>Audience insight, performance data, and market judgment. Senior judgment. Lean accountable teams.</div>
               </div>
               <div style={{ borderTop: "1px solid var(--ink)", paddingTop: 12, marginTop: 16 }}>
                 <a
