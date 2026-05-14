@@ -7,6 +7,7 @@
 
 <!-- SEO -->
 <meta name="description" content="Jean McDowell — senior theatrical marketing executive. 200+ films across six studios including Lionsgate, Miramax, and The Weinstein Company. Los Angeles."/>
+<link rel="canonical" href="https://jeanmcdowell.com/"/>
 
 <!-- Open Graph -->
 <meta property="og:title" content="Jean McDowell — Theatrical Marketing & Distribution"/>
@@ -33,6 +34,122 @@
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Structured Data: Person + ProfilePage + WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://jeanmcdowell.com/#person",
+      "name": "Jean McDowell",
+      "url": "https://jeanmcdowell.com/",
+      "email": "mailto:jean@jeanmcdowell.com",
+      "jobTitle": "Head of Theatrical Marketing",
+      "description": "Senior theatrical marketing executive with 200+ film campaigns across studios, streamers, and specialty distributors.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Los Angeles",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/jeanmcdowell"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Magenta Light Studios"
+      },
+      "knowsAbout": [
+        "Theatrical marketing",
+        "Film distribution",
+        "P&A strategy",
+        "Audience research",
+        "Awards campaigns",
+        "Franchise marketing",
+        "Streaming windowing"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Head of Theatrical Marketing",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Los Angeles"
+          },
+          "skills": "Theatrical marketing, P&A modeling, distribution strategy, audience segmentation, creative oversight"
+        }
+      ],
+      "hasOccupationalCredential": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Head of Theatrical Marketing",
+          "startDate": "2025",
+          "memberOf": { "@type": "Organization", "name": "Magenta Light Studios" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Head of Marketing (Contract)",
+          "startDate": "2024",
+          "endDate": "2025",
+          "memberOf": { "@type": "Organization", "name": "Briarcliff Entertainment" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SVP Worldwide Marketing & Publicity",
+          "memberOf": { "@type": "Organization", "name": "Miramax" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SVP Marketing; SVP Research & Strategy",
+          "memberOf": { "@type": "Organization", "name": "Lionsgate" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Vice President of Marketing",
+          "startDate": "2010",
+          "endDate": "2012",
+          "memberOf": { "@type": "Organization", "name": "The Weinstein Company" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Co-Founder",
+          "memberOf": { "@type": "Organization", "name": "Brigade Marketing" }
+        }
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://jeanmcdowell.com/#profilepage",
+      "url": "https://jeanmcdowell.com/",
+      "name": "Jean McDowell — Theatrical Marketing & Distribution",
+      "description": "Profile of Jean McDowell, senior theatrical marketing executive based in Los Angeles. 200+ film campaigns across Lionsgate, Miramax, The Weinstein Company, and more.",
+      "inLanguage": "en",
+      "mainEntity": { "@id": "https://jeanmcdowell.com/#person" },
+      "about": { "@id": "https://jeanmcdowell.com/#person" },
+      "isPartOf": { "@id": "https://jeanmcdowell.com/#website" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jeanmcdowell.com/#website",
+      "url": "https://jeanmcdowell.com/",
+      "name": "Jean McDowell",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://jeanmcdowell.com/#person" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <template id="__bundler_thumbnail" data-bg-color="#f2ece1">
