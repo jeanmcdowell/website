@@ -89,7 +89,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Executive-level marketing for films that need to perform — not films that need to look like they're performing. P&amp;A modeled as architecture, not a budget line. Creative reviewed frame-by-frame, not by deck. Audience segmentation, exhibitor relationships, and streaming-window strategy that survive opening weekend.
+              Executive marketing for films that have to perform. P&amp;A modeled as architecture, not a budget line. Creative reviewed frame-by-frame, not by deck. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
             </p>
             <p style={{
               marginTop: 18,
@@ -97,7 +97,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Research-supported, not research-driven. Built for senior judgment and lean teams with real accountability — across studio, agency, and emerging-studio environments.
+              Research-supported, not research-driven. Senior judgment, lean teams, real accountability — across studio, agency, and emerging-studio environments.
             </p>
 
             <div ref={metricsRef} className="about-metrics" style={{
@@ -143,11 +143,15 @@ const About = () => {
                 <div style={{ marginTop: 4 }}>Data-informed, not data-driven. Senior judgment. Lean accountable teams.</div>
               </div>
               <div style={{ borderTop: "1px solid var(--ink)", paddingTop: 12, marginTop: 16 }}>
-                <a href="#contact" className="mech" style={{
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                  textTransform: "uppercase", letterSpacing: "0.14em",
-                  borderBottom: "1.5px solid var(--ink)", paddingBottom: 2,
-                }}>
+                <a
+                  href="#contact"
+                  className="mech"
+                  onClick={() => trackEvent("cta_click", { cta: "contact", location: "about_aside" })}
+                  style={{
+                    display: "inline-flex", alignItems: "center", gap: 8,
+                    textTransform: "uppercase", letterSpacing: "0.14em",
+                    borderBottom: "1.5px solid var(--ink)", paddingBottom: 2,
+                  }}>
                   Reach out <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>

@@ -75,10 +75,10 @@ const Hero = () => {
             aria-label="Primary"
             className={"hero-nav flex gap-24 mono " + (navOpen ? "open" : "")}
             style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
-            <a href="#about" className="mech nav-link" onClick={() => setNavOpen(false)}>01 / About</a>
-            <a href="#work" className="mech nav-link" onClick={() => setNavOpen(false)}>02 / Work</a>
-            <a href="#capabilities" className="mech nav-link" onClick={() => setNavOpen(false)}>03 / Capabilities</a>
-            <a href="#contact" className="mech nav-link" onClick={() => setNavOpen(false)}>04 / Contact</a>
+            <a href="#about" className="mech nav-link" onClick={() => { setNavOpen(false); trackEvent("nav_click", { target: "about" }); }}>01 / About</a>
+            <a href="#work" className="mech nav-link" onClick={() => { setNavOpen(false); trackEvent("nav_click", { target: "work" }); }}>02 / Work</a>
+            <a href="#capabilities" className="mech nav-link" onClick={() => { setNavOpen(false); trackEvent("nav_click", { target: "capabilities" }); }}>03 / Capabilities</a>
+            <a href="#contact" className="mech nav-link" onClick={() => { setNavOpen(false); trackEvent("nav_click", { target: "contact" }); }}>04 / Contact</a>
           </nav>
         </div>
       </div>
@@ -154,7 +154,7 @@ const Hero = () => {
             Senior theatrical, PVOD, and streaming marketing executive.{" "}
             <strong>200+ films marketed</strong> across The Weinstein Company, Miramax, Lionsgate, and Brigade Marketing. Franchise leadership on John Wick, The Hunger Games, and Divergent. Awards work on La La Land, The Artist, and The Holdovers.
             <span style={{ display: "block", marginTop: 14, opacity: 0.85 }}>
-              Data-informed, not data-driven. Senior judgment, lean teams, measurable accountability.
+              Data-informed, not data-driven. Senior judgment. Lean teams. Measurable accountability.
             </span>
           </div>
 
@@ -163,11 +163,26 @@ const Hero = () => {
             transform: stage >= 2 ? "none" : "translateY(16px)",
             transition: reduce ? "none" : "opacity 600ms ease 200ms, transform 700ms cubic-bezier(.2,.8,.2,1) 200ms",
           }}>
-            <a href="#contact" className="btn mech" data-variant="primary">
+            <a
+              href="#contact"
+              className="btn mech"
+              data-variant="primary"
+              onClick={() => trackEvent("cta_click", { cta: "contact", location: "hero" })}>
               Get in touch <span className="arrow" aria-hidden="true">&rarr;</span>
             </a>
-            <a href="#work" className="btn-ghost mech mono">
+            <a
+              href="#work"
+              className="btn-ghost mech mono"
+              onClick={() => trackEvent("cta_click", { cta: "see_work", location: "hero" })}>
               See the work <span aria-hidden="true">&darr;</span>
+            </a>
+            <a
+              href="/jean-mcdowell-resume.pdf"
+              className="btn-ghost mech mono"
+              download
+              onClick={() => trackEvent("resume_download", { location: "hero", file: "jean-mcdowell-resume.pdf" })}
+              aria-label="Download résumé (PDF)">
+              Download CV <span aria-hidden="true">&darr;</span>
             </a>
           </div>
         </div>
