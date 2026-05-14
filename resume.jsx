@@ -86,14 +86,6 @@ const ROLES = [
     tone: "default",
   },
   {
-    co: "Brigade Marketing",
-    title: "Co-Founder",
-    period: "Co-Founded",
-    note: "Co-founded the digital marketing agency for film campaigns. Built from one room to a full-service creative studio serving major studios and independents. 50+ film campaigns.",
-    accent: "var(--yellow)",
-    tone: "default",
-  },
-  {
     co: "Lionsgate",
     title: "SVP Marketing  ·  SVP Research & Strategy",
     period: "Senior Tenure",
@@ -107,6 +99,14 @@ const ROLES = [
     period: "2010 — 2012",
     note: "Awards positioning on The Artist (Best Picture), Django Unchained, The Iron Lady, My Week with Marilyn. Platform releases and prestige-tier creative oversight.",
     accent: "var(--red)",
+    tone: "default",
+  },
+  {
+    co: "Brigade Marketing",
+    title: "Co-Founder",
+    period: "Co-Founded",
+    note: "Co-founded the digital marketing agency for film campaigns. Built from one room to a full-service creative studio serving major studios and independents. 50+ film campaigns.",
+    accent: "var(--yellow)",
     tone: "default",
   },
 ];
