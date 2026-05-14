@@ -134,15 +134,6 @@ def build(path):
             "accent": BLUE,
         },
         {
-            "co": "Brigade Marketing",
-            "title": "Co-Founder",
-            "period": "Co-Founded",
-            "note": "Co-founded a digital marketing agency for film campaigns. "
-                    "Grew from one room to a full-service creative studio serving major studios "
-                    "and independent distributors. 50+ film campaigns.",
-            "accent": YELLOW,
-        },
-        {
             "co": "Lionsgate",
             "title": "SVP Marketing  ·  SVP Research & Strategy",
             "period": "Senior Tenure",
@@ -158,6 +149,15 @@ def build(path):
             "note": "Awards positioning on The Artist (Best Picture), Django Unchained, The Iron Lady, "
                     "and My Week with Marilyn. Platform release strategy and prestige-tier creative oversight.",
             "accent": RED,
+        },
+        {
+            "co": "Brigade Marketing",
+            "title": "Co-Founder",
+            "period": "Co-Founded",
+            "note": "Co-founded a digital marketing agency for film campaigns. "
+                    "Grew from one room to a full-service creative studio serving major studios "
+                    "and independent distributors. 50+ film campaigns.",
+            "accent": YELLOW,
         },
     ]
 
