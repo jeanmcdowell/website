@@ -1,11 +1,11 @@
-// Capabilities - flat cards (title + description both persistent, no flip)
+// Capabilities - grouped disciplines, compact cards.
 const CAP_GROUPS = [
   {
     title: "Marketing",
     color: "var(--red)",
     items: [
       { k: "Release Strategy", d: "Theatrical, hybrid, day-and-date, streaming windowing — sequencing built around audience, platform, and slate economics." },
-      { k: "P&A Budget Architecture", d: "Multi-million dollar prints-and-advertising plans, modeled and tracked against weekly performance." },
+      { k: "P&A Architecture", d: "Multi-million dollar prints-and-advertising plans, modeled and tracked against weekly performance." },
       { k: "Creative Advertising", d: "Trailer cuts, TV spots, key art, full digital asset suites — directing creative shops and reviewing every frame." },
       { k: "Paid Media Strategy", d: "Channel mix, flighting, and audience targeting from first announcement through opening weekend and streaming windows." },
       { k: "Publicity & Talent Relations", d: "Press tours, premieres, embargoes, talent and filmmaker handling." },
@@ -33,7 +33,7 @@ const Capabilities = () => {
     <section id="capabilities" className="section" style={{ background: "var(--paper)" }}>
       <div className="frame">
         <div className="section-tag">
-          <span className="num">§ 03</span>
+          <span className="num">&sect; 03</span>
           <span className="name">Capabilities</span>
           <span className="meta">{CAP_GROUPS.reduce((a, g) => a + g.items.length, 0)} disciplines</span>
         </div>
@@ -41,7 +41,7 @@ const Capabilities = () => {
         <div className="flex col gap-48">
           {CAP_GROUPS.map((g, gi) => (
             <div key={gi}>
-              <div style={{
+              <div className="cap-group-head" style={{
                 display: "flex",
                 alignItems: "center",
                 gap: 16,
@@ -49,14 +49,15 @@ const Capabilities = () => {
                 paddingBottom: 10,
                 marginBottom: 24,
               }}>
-                <div style={{ width: 18, height: 18, background: g.color, border: "2px solid var(--ink)" }}/>
-                <div className="display" style={{ fontSize: 22, letterSpacing: "0.02em" }}>{g.title}</div>
+                <div style={{ width: 18, height: 18, background: g.color, border: "2px solid var(--ink)" }} aria-hidden="true"/>
+                <h3 className="display" style={{ fontSize: 22, letterSpacing: "0.02em", margin: 0 }}>{g.title}</h3>
                 <div className="mono" style={{ marginLeft: "auto", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", opacity: 0.55 }}>
                   {String(gi + 1).padStart(2, "0")} / {String(CAP_GROUPS.length).padStart(2, "0")}
                 </div>
               </div>
 
-              <div className="grid" style={{
+              <div className="cap-grid" style={{
+                display: "grid",
                 gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
                 borderTop: "2px solid var(--ink)",
                 borderLeft: "2px solid var(--ink)",
@@ -79,18 +80,18 @@ const CapCard = ({ k, d, accent, idx }) => {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      className="cap-card"
       style={{
         position: "relative",
-        minHeight: 220,
+        minHeight: 180,
         borderRight: "2px solid var(--ink)",
         borderBottom: "2px solid var(--ink)",
         background: "var(--paper)",
         padding: 18,
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-start",
-        gap: 14,
-        transition: "background 120ms ease, transform 80ms steps(2,end), box-shadow 80ms steps(2,end)",
+        gap: 10,
+        transition: "transform 120ms cubic-bezier(.2,.8,.2,1), box-shadow 120ms ease",
         transform: hover ? "translate(-2px, -2px)" : "none",
         boxShadow: hover ? `4px 4px 0 ${accent}` : "none",
       }}>
@@ -98,25 +99,25 @@ const CapCard = ({ k, d, accent, idx }) => {
         <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", opacity: 0.45 }}>
           № {String(idx).padStart(2, "0")}
         </div>
-        <div style={{ width: 12, height: 12, background: accent, border: "2px solid var(--ink)", flexShrink: 0 }}/>
+        <div style={{ width: 10, height: 10, background: accent, border: "2px solid var(--ink)", flexShrink: 0 }} aria-hidden="true"/>
       </div>
-      <div className="display" style={{
-        fontSize: 18,
-        lineHeight: 1.05,
+      <h4 className="display" style={{
+        fontSize: 17,
+        lineHeight: 1.1,
         letterSpacing: "-0.01em",
         textTransform: "uppercase",
-        marginTop: 4,
+        margin: 0,
       }}>
         {k}
-      </div>
-      <div style={{
+      </h4>
+      <p style={{
         fontSize: 13,
-        lineHeight: 1.45,
+        lineHeight: 1.5,
         opacity: 0.88,
-        marginTop: 2,
+        margin: 0,
       }}>
         {d}
-      </div>
+      </p>
     </div>
   );
 };

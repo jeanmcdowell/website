@@ -1,6 +1,12 @@
 // Bauhaus geometric primitives used throughout the site.
 // Pure SVG so they animate cheaply and look crisp at any size.
 
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
 const Circle = ({ size = 100, fill = "var(--red)", stroke = "none", style = {}, className = "", ...rest }) => (
   <svg className={className} width={size} height={size} viewBox="0 0 100 100" style={style} aria-hidden="true" {...rest}>
     <circle cx="50" cy="50" r="48" fill={fill} stroke={stroke} strokeWidth={stroke === "none" ? 0 : 2}/>
@@ -54,4 +60,4 @@ const Mark = ({ size = 48, style = {} }) => (
   </svg>
 );
 
-Object.assign(window, { Circle, HalfCircle, Square, Triangle, QuarterCircle, Bar, Target, Mark });
+Object.assign(window, { Circle, HalfCircle, Square, Triangle, QuarterCircle, Bar, Target, Mark, prefersReducedMotion });

@@ -38,7 +38,37 @@ body {
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "ss01", "cv11";
   overflow-x: hidden;
-  cursor: default;
+}
+
+/* Focus styles — visible on keyboard nav, suppressed for mouse */
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.btn:focus-visible,
+.btn-ghost:focus-visible,
+.contact-cta:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Skip link — hidden until focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 12px;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 16px;
 }
 
 img,
@@ -168,7 +198,7 @@ nav a {
   transform: translate(-2px, -2px);
 }
 
-/* Brutalist button */
+/* Primary button */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -181,16 +211,64 @@ nav a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: var(--rule) solid var(--ink);
-  cursor: default;
+  cursor: pointer;
   position: relative;
+  min-height: 44px;
 }
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
   background: var(--red);
   color: var(--paper);
   border-color: var(--ink);
 }
-.btn .arrow { display: inline-block; transition: transform 80ms steps(2,end); }
-.btn:hover .arrow { transform: translateX(4px); }
+.btn .arrow { display: inline-block; transition: transform 200ms cubic-bezier(.2,.8,.2,1); }
+.btn:hover .arrow,
+.btn:focus-visible .arrow { transform: translateX(4px); }
+
+/* Ghost button — secondary action */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  cursor: pointer;
+  min-height: 44px;
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Nav links */
+.nav-link {
+  position: relative;
+  padding: 6px 2px;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after { transform: scaleX(1); }
 
 /* Color swatches */
 .sw-red { background: var(--red); }
@@ -274,6 +352,70 @@ nav a {
   .mech:hover {
     transform: none;
   }
+}
+
+/* Contact CTAs */
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 28px;
+  border: 3px solid var(--paper);
+  font-family: var(--display);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  transition: background 200ms ease, color 200ms ease, transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms ease;
+  cursor: pointer;
+  min-height: 56px;
+  word-break: break-word;
+}
+.contact-cta__arrow {
+  display: inline-block;
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1);
+}
+.contact-cta:hover,
+.contact-cta:focus-visible {
+  transform: translate(-3px, -3px);
+}
+.contact-cta:hover .contact-cta__arrow,
+.contact-cta:focus-visible .contact-cta__arrow {
+  transform: translateX(6px);
+}
+.contact-cta--primary {
+  background: var(--paper);
+  color: var(--ink);
+  font-size: clamp(20px, 2.2vw, 28px);
+}
+.contact-cta--primary:hover,
+.contact-cta--primary:focus-visible {
+  background: var(--red);
+  color: var(--paper);
+  box-shadow: 8px 8px 0 var(--red);
+}
+.contact-cta--secondary {
+  background: transparent;
+  color: var(--paper);
+  font-size: clamp(15px, 1.6vw, 20px);
+}
+.contact-cta--secondary:hover,
+.contact-cta--secondary:focus-visible {
+  background: var(--blue);
+  color: var(--paper);
+  box-shadow: 8px 8px 0 var(--blue);
+}
+
+/* Honor reduced-motion preference globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
 }
 
 /* Mobile: hide "Established 2026" tagline below 768px to prevent wordmark overlap */
@@ -437,62 +579,48 @@ nav a {
     width: 180px !important;
     height: 180px !important;
     left: 58% !important;
-    top: 15% !important;
+    top: 18% !important;
   }
   .hero-shape-2 {
-    width: 170px !important;
-    height: 170px !important;
-    left: -8% !important;
-    top: 48% !important;
+    width: 160px !important;
+    height: 160px !important;
+    left: -6% !important;
+    top: 52% !important;
   }
   .hero-shape-3 {
     width: 150px !important;
     height: 150px !important;
     left: 52% !important;
-    top: 60% !important;
+    top: 62% !important;
   }
   .hero-shape-4 {
-    width: 124px !important;
-    height: 124px !important;
-    left: -8% !important;
-    top: 0 !important;
-  }
-  .hero-shape-5 {
     width: 96px !important;
     height: 96px !important;
-    left: 46% !important;
-    top: 2% !important;
-  }
-  .hero-shape-6,
-  .hero-shape-7,
-  .hero-shape-8 {
-    display: none !important;
+    left: 4% !important;
+    top: 4% !important;
   }
 
-  #about .frame > div:nth-child(2) {
+  #about .about-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
-  #about .frame > div:nth-child(2) > div:first-child > div {
+  #about .about-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
-  #about .frame > div:nth-child(2) > div:last-child {
+  #about .about-aside {
     position: static !important;
   }
-  #about p.display {
-    min-height: 4.5em !important;
-  }
 
-  #work .grid,
-  #capabilities .grid {
+  #work .role-grid,
+  #capabilities .cap-grid {
     grid-template-columns: 1fr !important;
   }
-  #work .grid {
+  #work .role-grid {
     border-top-width: 2px !important;
     border-left-width: 2px !important;
   }
-  #work .grid > div {
-    min-height: 260px !important;
+  #work .role-grid > .role-card {
+    min-height: 240px !important;
     padding: 22px 20px !important;
   }
   #work .display {
@@ -513,26 +641,25 @@ nav a {
   #capabilities .flex.col.gap-48 {
     gap: 36px;
   }
-  #capabilities .grid > div {
-    min-height: 180px !important;
+  #capabilities .cap-grid > .cap-card {
+    min-height: 160px !important;
   }
 
-  #contact a[href^="mailto:"],
-  #contact a[href*="linkedin.com"] {
+  #contact .contact-cta {
     display: flex !important;
     width: 100%;
     justify-content: space-between;
     gap: 14px !important;
-    margin-top: 18px !important;
     padding: 18px 18px !important;
-    font-size: clamp(16px, 5vw, 22px) !important;
     overflow-wrap: anywhere;
   }
-  #contact a[href^="mailto:"] {
-    margin-top: 32px !important;
+  #contact .contact-cta--primary {
     font-size: clamp(18px, 5.6vw, 24px) !important;
   }
-  #contact .frame > div:nth-child(2) > div:last-child {
+  #contact .contact-cta--secondary {
+    font-size: clamp(15px, 4.6vw, 19px) !important;
+  }
+  #contact .contact-meta-grid {
     grid-template-columns: 1fr !important;
     margin-top: 44px !important;
     gap: 20px !important;
@@ -570,7 +697,7 @@ nav a {
   .hero-intro {
     padding: 16px;
   }
-  #about .frame > div:nth-child(2) > div:first-child > div {
+  #about .about-metrics {
     grid-template-columns: 1fr !important;
   }
   .site-footer {
