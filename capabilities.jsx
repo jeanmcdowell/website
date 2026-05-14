@@ -5,7 +5,7 @@ const CAP_GROUPS = [
     color: "var(--red)",
     items: [
       { k: "Release Strategy", d: "Theatrical, hybrid, day-and-date, streaming windowing, sequenced to audience, platform, and slate economics." },
-      { k: "P&A Architecture", d: "Multi-million-dollar prints-and-advertising plans, modeled and tracked weekly against performance." },
+      { k: "P&A Architecture", d: "Prints-and-advertising plans from under $1M through $25M+, modeled and tracked weekly against performance." },
       { k: "Creative Advertising", d: "Trailers, TV spots, key art, full digital asset suites. Direct creative shops; review every frame." },
       { k: "Paid Media Strategy", d: "Channel mix, flighting, and audience targeting from announcement through opening weekend and streaming windows." },
       { k: "Publicity & Talent Relations", d: "Press tours, premieres, embargoes, filmmaker and talent handling." },

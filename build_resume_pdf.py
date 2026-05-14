@@ -2,6 +2,7 @@
 Build jean-mcdowell-resume.pdf from on-site copy only.
 Source content: hero.jsx, about.jsx, resume.jsx, capabilities.jsx, contact.jsx.
 No invented employers, titles, dates, or metrics.
+No em or en dashes anywhere.
 """
 
 from reportlab.lib.pagesizes import LETTER
@@ -83,17 +84,18 @@ def build(path):
     draw_rule(c, M, y, PAGE_W - M, w=1.5)
     y -= 18
 
-    # ---- Summary (verbatim site copy)
+    # ---- Summary (softened language; no over-senior signaling, no "data-driven")
     c.setFillColor(INK)
     c.setFont("Helvetica-Bold", 11)
     c.drawString(M, y, "SUMMARY")
     y -= 14
     summary = (
-        "Senior theatrical, PVOD, and streaming marketing executive. "
-        "200+ films marketed across The Weinstein Company, Miramax, Lionsgate, and Brigade Marketing. "
-        "Franchise leadership on John Wick, The Hunger Games, and Divergent. "
-        "Awards work on La La Land, The Artist, and The Holdovers. "
-        "Data-informed, not data-driven. Senior judgment, lean teams, measurable accountability."
+        "Theatrical, PVOD, and streaming marketing executive with deep studio, specialty, "
+        "and boutique experience across 200+ films. Senior judgment and autonomy on multiple "
+        "priority titles. Set title-level positioning and overarching campaign strategy, then "
+        "drive execution across creative, media, publicity, partnerships, and distribution. "
+        "P&A budgets from under $1M through $25M+, using audience insight, performance data, "
+        "and market judgment. Lean teams, clear accountability, executive-level communication."
     )
     y = wrap(c, summary, M, y, PAGE_W - 2 * M, size=10, leading=13)
     y -= 6
@@ -109,54 +111,64 @@ def build(path):
     roles = [
         {
             "co": "Magenta Light Studios",
-            "title": "Head of Theatrical Marketing",
+            "title": "Marketing Leadership, Theatrical Campaign Strategy",
             "period": "2025 to Present",
-            "note": "Standing up theatrical marketing for the studio's release slate: "
-                    "campaign architecture, P&A modeling, and distribution alignment.",
+            "note": "Lead theatrical positioning and campaign strategy for an emerging "
+                    "independent studio. Build go-to-market plans across creative, media, "
+                    "publicity, and distribution partners against disciplined P&A budgets.",
             "accent": RED,
         },
         {
             "co": "Briarcliff Entertainment",
-            "title": "Head of Marketing (Contract)",
+            "title": "Consultant, Head of Marketing (Contract)",
             "period": "2024 to 2025",
-            "note": "End-to-end campaign leadership for independent theatrical releases. "
-                    "Strategy, creative, paid media, exhibitor.",
+            "note": "Led theatrical and PVOD marketing strategy for a boutique distributor. "
+                    "Oversaw marketing, publicity, paid media, exhibitor marketing, and digital "
+                    "and social. Partnered with Universal Pictures Home Entertainment on "
+                    "integrated theatrical and PVOD windowing.",
             "accent": BLUE,
         },
         {
             "co": "Miramax",
-            "title": "SVP Worldwide Marketing & Publicity",
-            "period": "Senior Tenure",
-            "note": "Theatrical and streaming-window campaigns across the recent slate, including "
-                    "The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, and Here. "
-                    "Day-and-date and short-window streaming releases on Peacock and Amazon MGM. "
-                    "Library reactivation and global brand work.",
+            "title": "Head of Worldwide Marketing, Publicity & Consumer Products",
+            "period": "2019 to 2024",
+            "note": "Directed global marketing and publicity for Miramax film and television "
+                    "during a transformative ownership period. Set title-level positioning and "
+                    "campaign strategy across the slate. Owned International Marketing, Sales, "
+                    "and Distribution alignment with global partners. Represented Miramax at "
+                    "international festivals and markets.",
             "accent": BLUE,
         },
         {
             "co": "Lionsgate",
-            "title": "SVP Marketing  ·  SVP Research & Strategy",
-            "period": "Senior Tenure",
-            "note": "Tentpole and franchise campaigns: John Wick, The Hunger Games, Divergent. "
-                    "Global day-and-date and platform releases across theatrical and home entertainment windows. "
-                    "Multi-territory launch coordination.",
+            "title": "SVP, Worldwide Research & Marketing",
+            "period": "2012 to 2019",
+            "note": "Led research and audience strategy for the Motion Picture Group across "
+                    "franchises and breakout titles including John Wick, The Hunger Games, "
+                    "Now You See Me, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler "
+                    "Perry franchise. Founded and launched Lionsgate Premiere. Directed P&A "
+                    "budgets from under $1M to $25M+ across tentpoles, specialty, and awards titles.",
             "accent": INK,
         },
         {
             "co": "The Weinstein Company",
-            "title": "Vice President of Marketing",
+            "title": "VP, Marketing",
             "period": "2010 to 2012",
-            "note": "Awards positioning on The Artist (Best Picture), Django Unchained, The Iron Lady, "
-                    "and My Week with Marilyn. Platform release strategy and prestige-tier creative oversight.",
+            "note": "Contributed to marketing strategy for Academy Award winning and commercially "
+                    "successful titles including The Artist, Django Unchained, Silver Linings "
+                    "Playbook, and The Iron Lady. Supported campaign development across creative "
+                    "advertising, publicity, and media strategy. Partnered with senior executives "
+                    "on title positioning and market entry planning.",
             "accent": RED,
         },
         {
             "co": "Brigade Marketing",
             "title": "Co-Founder",
-            "period": "Co-Founded",
-            "note": "Co-founded a digital marketing agency for film campaigns. "
-                    "Grew from one room to a full-service creative studio serving major studios "
-                    "and independent distributors. 50+ film campaigns.",
+            "period": "2009 to 2010",
+            "note": "Co-founded a boutique agency specializing in prestige and breakout film "
+                    "campaigns for independent and studio-backed releases. Led marketing and "
+                    "awards strategy in close collaboration with distributors, PR teams, and "
+                    "filmmakers.",
             "accent": YELLOW,
         },
     ]
@@ -208,13 +220,14 @@ def build(path):
         ("Franchise & Tentpole", RED, [
             "The Hunger Games: Catching Fire", "The Hunger Games: Mockingjay Part 1 & 2",
             "John Wick: Chapter 2", "John Wick: Chapter 3",
-            "Divergent", "Allegiant", "Now You See Me 1 & 2",
+            "Now You See Me 1 & 2",
             "Halloween Kills", "Halloween Ends", "Power Rangers",
             "The Expendables 3", "The Beekeeper",
         ]),
         ("Prestige & Awards", BLUE, [
-            "La La Land", "The Artist", "The Holdovers", "Sicario", "Wonder",
-            "Django Unchained", "The Iron Lady", "My Week with Marilyn",
+            "La La Land", "Sicario", "Wonder", "Hacksaw Ridge",
+            "The Artist", "The Holdovers",
+            "Django Unchained", "Silver Linings Playbook", "The Iron Lady",
             "Bombshell", "Blindspotting",
         ]),
         ("Genre & Commercial", YELLOW, [
@@ -273,7 +286,7 @@ def build(path):
     cap_groups = [
         ("Marketing", RED, [
             "Release Strategy: theatrical, hybrid, day-and-date, streaming windowing.",
-            "P&A Architecture: multi-million dollar plans modeled and tracked weekly.",
+            "P&A Architecture: under $1M through $25M+, modeled and tracked weekly.",
             "Creative Advertising: trailers, TV, key art, full digital asset suites.",
             "Paid Media: channel mix, flighting, audience targeting through release windows.",
             "Publicity & Talent Relations: tours, premieres, embargoes, filmmaker handling.",
