@@ -40,7 +40,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Focus styles — visible on keyboard nav, suppressed for mouse */
+/* Focus styles: visible on keyboard nav, suppressed for mouse */
 :focus { outline: none; }
 :focus-visible {
   outline: 3px solid var(--red);
@@ -53,7 +53,7 @@ body {
   outline-offset: 4px;
 }
 
-/* Skip link — hidden until focused */
+/* Skip link: hidden until focused */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -225,7 +225,7 @@ nav a {
 .btn:hover .arrow,
 .btn:focus-visible .arrow { transform: translateX(4px); }
 
-/* Ghost button — secondary action */
+/* Ghost button: secondary action */
 .btn-ghost {
   display: inline-flex;
   align-items: center;

@@ -4,15 +4,15 @@ const CAP_GROUPS = [
     title: "Marketing",
     color: "var(--red)",
     items: [
-      { k: "Release Strategy", d: "Theatrical, hybrid, day-and-date, streaming windowing — sequenced to audience, platform, and slate economics." },
+      { k: "Release Strategy", d: "Theatrical, hybrid, day-and-date, streaming windowing, sequenced to audience, platform, and slate economics." },
       { k: "P&A Architecture", d: "Multi-million-dollar prints-and-advertising plans, modeled and tracked weekly against performance." },
       { k: "Creative Advertising", d: "Trailers, TV spots, key art, full digital asset suites. Direct creative shops; review every frame." },
       { k: "Paid Media Strategy", d: "Channel mix, flighting, and audience targeting from announcement through opening weekend and streaming windows." },
       { k: "Publicity & Talent Relations", d: "Press tours, premieres, embargoes, filmmaker and talent handling." },
       { k: "Awards Positioning", d: "Campaign architecture from festival debut to ballot deadline." },
       { k: "Audience Research & Segmentation", d: "Tracking, screening, and competitive analysis modeled at title and slate level across theatrical and streaming." },
-      { k: "Exhibitor Marketing", d: "Chain and indie-circuit coordination — the rooms films actually open in." },
-      { k: "Global Launch Coordination", d: "Multi-territory launches across theatrical and streaming. Creative, localization, talent deployment, and PR sequenced market-by-market." },
+      { k: "Exhibitor Marketing", d: "Chain and indie-circuit coordination. The rooms films actually open in." },
+      { k: "International Marketing, Sales, and Distribution", d: "Multi-territory campaigns across theatrical and streaming. Sales coordination, distributor partnerships, localization, talent deployment, and PR sequenced market-by-market." },
     ],
   },
   {
@@ -20,10 +20,10 @@ const CAP_GROUPS = [
     color: "var(--blue)",
     items: [
       { k: "Multi-Title Campaign Management", d: "Several simultaneous releases, each on its own clock, one team." },
-      { k: "Vendor & Agency Management", d: "Creative shops, PR firms, media buyers, exhibitor partners — held to scope and spend." },
-      { k: "Cross-Functional Coordination", d: "Legal, finance, sales, distribution — marketing that reflects the deal." },
+      { k: "Vendor & Agency Management", d: "Creative shops, PR firms, media buyers, exhibitor partners, held to scope and spend." },
+      { k: "Cross-Functional Coordination", d: "Legal, finance, sales, distribution. Marketing that reflects the deal." },
       { k: "Asset Pipeline", d: "Ingestion, versioning, localization, delivery." },
-      { k: "Budget Allocation", d: "Paid, earned, owned — optimized to where the audience actually is." },
+      { k: "Budget Allocation", d: "Paid, earned, owned, optimized to where the audience actually is." },
     ],
   },
 ];
@@ -105,7 +105,7 @@ const CapCard = ({ k, d, accent, idx }) => {
         fontSize: 17,
         lineHeight: 1.1,
         letterSpacing: "-0.01em",
-        textTransform: "uppercase",
+        textTransform: "none",
         margin: 0,
       }}>
         {k}

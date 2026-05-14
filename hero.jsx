@@ -41,7 +41,7 @@ const Hero = () => {
 
       {/* Top bar */}
       <div className="hero-top flex between center" style={{ position: "relative", zIndex: 5 }}>
-        <a href="#" className="hero-brand flex center gap-12" aria-label="Jean McDowell — home" style={{ minHeight: 44 }}>
+        <a href="#" className="hero-brand flex center gap-12" aria-label="Jean McDowell, home" style={{ minHeight: 44 }}>
           <Mark size={36}/>
           <div className="hero-brand-text mono" style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>
             <span className="hero-brand-name">Jean McDowell</span>
