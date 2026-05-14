@@ -105,6 +105,7 @@ const CapCard = ({ k, d, accent, idx }) => {
         fontSize: 17,
         lineHeight: 1.1,
         letterSpacing: "-0.01em",
+        textTransform: "none",
         margin: 0,
       }}>
         {k}
