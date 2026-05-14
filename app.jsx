@@ -22,6 +22,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
 const App = () => {
   const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const showTweaks = React.useMemo(() => {
+    try {
+      return typeof window !== "undefined" &&
+        new URLSearchParams(window.location.search).get("tweaks") === "1";
+    } catch { return false; }
+  }, []);
 
   // Apply palette + type pair as CSS vars
   React.useEffect(() => {
@@ -36,35 +42,39 @@ const App = () => {
   return (
     <div>
       <Hero/>
-      <About/>
-      <Resume/>
-      <Capabilities/>
-      <Contact/>
+      <main id="main">
+        <About/>
+        <Resume/>
+        <Capabilities/>
+        <Contact/>
+      </main>
 
-      <TweaksPanel title="Tweaks">
-        <TweakSection label="Palette"/>
-        <TweakRadio
-          label="Theme"
-          value={t.palette}
-          options={["bauhaus", "noir", "dessau", "swiss", "albers"]}
-          onChange={(v) => setTweak("palette", v)}
-        />
-        <TweakSection label="Typography"/>
-        <TweakSelect
-          label="Display + body"
-          value={t.typePair}
-          options={[
-            { value: "archivo", label: "Archivo Black / Inter" },
-            { value: "druk", label: "Anton / Inter" },
-            { value: "futura", label: "Bowlby / Work Sans" },
-            { value: "mono", label: "Space Mono everything" },
-            { value: "slab", label: "Alfa Slab / Plex Sans" },
-          ]}
-          onChange={(v) => setTweak("typePair", v)}
-        />
-        <TweakSection label="Composition"/>
-        <TweakToggle label="Show construction grid" value={t.showGrid} onChange={(v) => setTweak("showGrid", v)}/>
-      </TweaksPanel>
+      {showTweaks && (
+        <TweaksPanel title="Tweaks">
+          <TweakSection label="Palette"/>
+          <TweakRadio
+            label="Theme"
+            value={t.palette}
+            options={["bauhaus", "noir", "dessau", "swiss", "albers"]}
+            onChange={(v) => setTweak("palette", v)}
+          />
+          <TweakSection label="Typography"/>
+          <TweakSelect
+            label="Display + body"
+            value={t.typePair}
+            options={[
+              { value: "archivo", label: "Archivo Black / Inter" },
+              { value: "druk", label: "Anton / Inter" },
+              { value: "futura", label: "Bowlby / Work Sans" },
+              { value: "mono", label: "Space Mono everything" },
+              { value: "slab", label: "Alfa Slab / Plex Sans" },
+            ]}
+            onChange={(v) => setTweak("typePair", v)}
+          />
+          <TweakSection label="Composition"/>
+          <TweakToggle label="Show construction grid" value={t.showGrid} onChange={(v) => setTweak("showGrid", v)}/>
+        </TweaksPanel>
+      )}
     </div>
   );
 };
