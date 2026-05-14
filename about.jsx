@@ -97,7 +97,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Research-supported, not research-driven. Senior judgment, lean teams, real accountability — across studio, agency, and emerging-studio environments.
+              Research-supported, not research-driven. Senior judgment, lean teams, real accountability across studio, agency, and emerging-studio environments.
             </p>
 
             <div ref={metricsRef} className="about-metrics" style={{

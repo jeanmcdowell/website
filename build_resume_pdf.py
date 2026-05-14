@@ -51,7 +51,7 @@ def wrap(c, text, x, y, max_w, font="Helvetica", size=10, leading=13, color=INK)
 
 def build(path):
     c = canvas.Canvas(path, pagesize=LETTER)
-    c.setTitle("Jean McDowell — Resume")
+    c.setTitle("Jean McDowell, Resume")
     c.setAuthor("Jean McDowell")
     c.setSubject("Senior theatrical marketing executive")
 
@@ -110,15 +110,15 @@ def build(path):
         {
             "co": "Magenta Light Studios",
             "title": "Head of Theatrical Marketing",
-            "period": "2025 — Present",
-            "note": "Standing up theatrical marketing for the studio's release slate — "
+            "period": "2025 to Present",
+            "note": "Standing up theatrical marketing for the studio's release slate: "
                     "campaign architecture, P&A modeling, and distribution alignment.",
             "accent": RED,
         },
         {
             "co": "Briarcliff Entertainment",
             "title": "Head of Marketing (Contract)",
-            "period": "2024 — 2025",
+            "period": "2024 to 2025",
             "note": "End-to-end campaign leadership for independent theatrical releases. "
                     "Strategy, creative, paid media, exhibitor.",
             "accent": BLUE,
@@ -127,8 +127,8 @@ def build(path):
             "co": "Miramax",
             "title": "SVP Worldwide Marketing & Publicity",
             "period": "Senior Tenure",
-            "note": "Theatrical and streaming-window campaigns across the recent slate — "
-                    "The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, Here. "
+            "note": "Theatrical and streaming-window campaigns across the recent slate, including "
+                    "The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, and Here. "
                     "Day-and-date and short-window streaming releases on Peacock and Amazon MGM. "
                     "Library reactivation and global brand work.",
             "accent": BLUE,
@@ -145,7 +145,7 @@ def build(path):
         {
             "co": "The Weinstein Company",
             "title": "Vice President of Marketing",
-            "period": "2010 — 2012",
+            "period": "2010 to 2012",
             "note": "Awards positioning on The Artist (Best Picture), Django Unchained, The Iron Lady, "
                     "and My Week with Marilyn. Platform release strategy and prestige-tier creative oversight.",
             "accent": RED,
@@ -272,22 +272,22 @@ def build(path):
 
     cap_groups = [
         ("Marketing", RED, [
-            "Release Strategy — theatrical, hybrid, day-and-date, streaming windowing.",
-            "P&A Architecture — multi-million dollar plans modeled and tracked weekly.",
-            "Creative Advertising — trailers, TV, key art, full digital asset suites.",
-            "Paid Media — channel mix, flighting, audience targeting through release windows.",
-            "Publicity & Talent Relations — tours, premieres, embargoes, filmmaker handling.",
-            "Awards Positioning — festival debut to ballot deadline.",
-            "Audience Research & Segmentation — tracking, screening, competitive analysis.",
-            "Exhibitor Marketing — chain and indie circuit coordination.",
-            "Global Launch Coordination — multi-territory creative, localization, PR sequencing.",
+            "Release Strategy: theatrical, hybrid, day-and-date, streaming windowing.",
+            "P&A Architecture: multi-million dollar plans modeled and tracked weekly.",
+            "Creative Advertising: trailers, TV, key art, full digital asset suites.",
+            "Paid Media: channel mix, flighting, audience targeting through release windows.",
+            "Publicity & Talent Relations: tours, premieres, embargoes, filmmaker handling.",
+            "Awards Positioning: festival debut to ballot deadline.",
+            "Audience Research & Segmentation: tracking, screening, competitive analysis.",
+            "Exhibitor Marketing: chain and indie circuit coordination.",
+            "International Marketing, Sales, and Distribution: multi-territory campaigns, sales coordination, localization, PR sequencing.",
         ]),
         ("Operations", BLUE, [
-            "Multi-Title Campaign Management — simultaneous releases on one team.",
-            "Vendor & Agency Management — creative shops, PR firms, media buyers.",
-            "Cross-Functional Coordination — legal, finance, sales, distribution.",
-            "Asset Pipeline — ingestion, versioning, localization, delivery.",
-            "Budget Allocation — paid, earned, owned, optimized to audience.",
+            "Multi-Title Campaign Management: simultaneous releases on one team.",
+            "Vendor & Agency Management: creative shops, PR firms, media buyers.",
+            "Cross-Functional Coordination: legal, finance, sales, distribution.",
+            "Asset Pipeline: ingestion, versioning, localization, delivery.",
+            "Budget Allocation: paid, earned, owned, optimized to audience.",
         ]),
     ]
 

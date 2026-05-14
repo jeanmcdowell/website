@@ -41,7 +41,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="contact-cta contact-cta--secondary"
                 onClick={() => trackEvent("linkedin_click", { location: "contact" })}
-                aria-label="LinkedIn — Jean McDowell">
+                aria-label="LinkedIn, Jean McDowell">
                 <span className="contact-cta__label">linkedin.com/in/jeanmcdowell</span>
                 <span className="contact-cta__arrow" aria-hidden="true">&rarr;</span>
               </a>
