@@ -6,6 +6,20 @@ const prefersReducedMotion = () =>
   window.matchMedia &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Analytics helper. No-ops cleanly when gtag/dataLayer aren't loaded.
+// Use one call site per CTA: trackEvent("cta_click", { cta: "resume_download", location: "hero" }).
+const trackEvent = (name, params) => {
+  if (typeof window === "undefined" || !name) return;
+  const payload = Object.assign({}, params || {});
+  try {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, payload);
+    } else if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push(Object.assign({ event: name }, payload));
+    }
+  } catch (_) { /* never let analytics break the UI */ }
+};
+
 
 const Circle = ({ size = 100, fill = "var(--red)", stroke = "none", style = {}, className = "", ...rest }) => (
   <svg className={className} width={size} height={size} viewBox="0 0 100 100" style={style} aria-hidden="true" {...rest}>
@@ -60,4 +74,4 @@ const Mark = ({ size = 48, style = {} }) => (
   </svg>
 );
 
-Object.assign(window, { Circle, HalfCircle, Square, Triangle, QuarterCircle, Bar, Target, Mark, prefersReducedMotion });
+Object.assign(window, { Circle, HalfCircle, Square, Triangle, QuarterCircle, Bar, Target, Mark, prefersReducedMotion, trackEvent });

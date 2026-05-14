@@ -65,7 +65,7 @@ const ROLES = [
     co: "Magenta Light Studios",
     title: "Head of Theatrical Marketing",
     period: "2025 — Present",
-    note: "Building theatrical marketing infrastructure for the studio's release slate. Campaign frameworks, P&A planning, and distribution alignment.",
+    note: "Standing up theatrical marketing for the studio's release slate — campaign architecture, P&A modeling, distribution alignment.",
     accent: "var(--red)",
     tone: "current",
   },
@@ -73,7 +73,7 @@ const ROLES = [
     co: "Briarcliff Entertainment",
     title: "Head of Marketing, Contract",
     period: "2024 — 2025",
-    note: "End-to-end campaign leadership for independent theatrical releases — strategy, creative, paid media, and exhibitor coordination.",
+    note: "End-to-end campaign leadership for independent theatrical releases. Strategy, creative, paid media, exhibitor.",
     accent: "var(--blue)",
     tone: "default",
   },
@@ -81,7 +81,7 @@ const ROLES = [
     co: "Brigade Marketing",
     title: "Co-Founder",
     period: "Co-Founded",
-    note: "Co-founded a digital marketing agency for film campaigns. Grew it from one room to a full-service creative studio serving major studios and independent distributors. Added 50+ film campaigns to the volume.",
+    note: "Co-founded the digital marketing agency for film campaigns. Built from one room to a full-service creative studio serving major studios and independents. 50+ film campaigns.",
     accent: "var(--yellow)",
     tone: "default",
   },
@@ -89,7 +89,7 @@ const ROLES = [
     co: "Lionsgate",
     title: "SVP Marketing  ·  SVP Research & Strategy",
     period: "Senior Tenure",
-    note: "Tentpole and franchise campaigns including John Wick, The Hunger Games, and Divergent. Global day-and-date and platform releases across theatrical and home entertainment windows. Multi-territory launch coordination.",
+    note: "Tentpole and franchise leadership: John Wick, The Hunger Games, Divergent. Global day-and-date and platform releases across theatrical and home entertainment windows.",
     accent: "var(--ink)",
     tone: "default",
   },
@@ -97,7 +97,7 @@ const ROLES = [
     co: "Miramax",
     title: "SVP Worldwide Marketing & Publicity",
     period: "Senior Tenure",
-    note: "Theatrical and streaming-window campaigns across the recent slate — The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, Here. Day-and-date and short-window streaming releases on Peacock and Amazon MGM. Library reactivation and global brand work.",
+    note: "Recent slate across theatrical and short-window streaming — The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, Here. Day-and-date releases on Peacock and Amazon MGM. Library reactivation and global brand.",
     accent: "var(--blue)",
     tone: "default",
   },
@@ -105,7 +105,7 @@ const ROLES = [
     co: "The Weinstein Company",
     title: "Vice President of Marketing",
     period: "2010 — 2012",
-    note: "Awards positioning on The Artist (Best Picture), Django Unchained, The Iron Lady, and My Week with Marilyn. Platform release strategy and prestige-tier creative oversight.",
+    note: "Awards positioning on The Artist (Best Picture), Django Unchained, The Iron Lady, My Week with Marilyn. Platform releases and prestige-tier creative oversight.",
     accent: "var(--red)",
     tone: "default",
   },
@@ -192,11 +192,18 @@ const Resume = () => {
 
         <div className="mono" style={{
           fontSize: 11, marginTop: 24, letterSpacing: "0.12em",
-          textTransform: "uppercase", opacity: 0.65,
+          textTransform: "uppercase", opacity: 0.85,
           display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
         }}>
-          <span>200+ films &middot; Awards to tentpole &middot; Full CV on request</span>
-          <a href="#contact" className="mech" style={{ borderBottom: "1.5px solid var(--ink)" }}>Request CV &rarr;</a>
+          <span>200+ films &middot; Awards to tentpole &middot; Two-page CV</span>
+          <a
+            href="/jean-mcdowell-resume.pdf"
+            className="mech"
+            download
+            onClick={() => trackEvent("resume_download", { location: "work_footer", file: "jean-mcdowell-resume.pdf" })}
+            style={{ borderBottom: "1.5px solid var(--ink)" }}>
+            Download CV (PDF) &darr;
+          </a>
         </div>
       </div>
     </section>

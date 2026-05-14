@@ -29,6 +29,7 @@ const Contact = () => {
               <a
                 href="mailto:jean@jeanmcdowell.com"
                 className="contact-cta contact-cta--primary"
+                onClick={() => trackEvent("email_click", { location: "contact", address: "jean@jeanmcdowell.com" })}
                 aria-label="Email Jean McDowell">
                 <span className="contact-cta__label">jean@jeanmcdowell.com</span>
                 <span className="contact-cta__arrow" aria-hidden="true">&rarr;</span>
@@ -39,9 +40,20 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-cta contact-cta--secondary"
+                onClick={() => trackEvent("linkedin_click", { location: "contact" })}
                 aria-label="LinkedIn — Jean McDowell">
                 <span className="contact-cta__label">linkedin.com/in/jeanmcdowell</span>
                 <span className="contact-cta__arrow" aria-hidden="true">&rarr;</span>
+              </a>
+
+              <a
+                href="/jean-mcdowell-resume.pdf"
+                download
+                className="contact-cta contact-cta--secondary"
+                onClick={() => trackEvent("resume_download", { location: "contact", file: "jean-mcdowell-resume.pdf" })}
+                aria-label="Download résumé (PDF)">
+                <span className="contact-cta__label">Download CV (PDF)</span>
+                <span className="contact-cta__arrow" aria-hidden="true">&darr;</span>
               </a>
             </div>
           </div>
@@ -57,7 +69,7 @@ const Contact = () => {
             {[
               { k: "Open to", v: "Senior marketing roles at studios, streamers, and specialty distributors." },
               { k: "Based", v: "Los Angeles, CA" },
-              { k: "Best route", v: "Email is fastest. CV available on request." },
+              { k: "Best route", v: "Email is fastest. Two-page CV available above." },
             ].map((m, i) => (
               <div key={i}>
                 <div className="mono" style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", opacity: 0.6 }}>
