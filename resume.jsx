@@ -78,6 +78,14 @@ const ROLES = [
     tone: "default",
   },
   {
+    co: "Miramax",
+    title: "SVP Worldwide Marketing & Publicity",
+    period: "Senior Tenure",
+    note: "Recent slate across theatrical and short-window streaming — The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, Here. Day-and-date releases on Peacock and Amazon MGM. Library reactivation and global brand.",
+    accent: "var(--blue)",
+    tone: "default",
+  },
+  {
     co: "Brigade Marketing",
     title: "Co-Founder",
     period: "Co-Founded",
@@ -91,14 +99,6 @@ const ROLES = [
     period: "Senior Tenure",
     note: "Tentpole and franchise leadership: John Wick, The Hunger Games, Divergent. Global day-and-date and platform releases across theatrical and home entertainment windows.",
     accent: "var(--ink)",
-    tone: "default",
-  },
-  {
-    co: "Miramax",
-    title: "SVP Worldwide Marketing & Publicity",
-    period: "Senior Tenure",
-    note: "Recent slate across theatrical and short-window streaming — The Beekeeper, The Holdovers, The Gentlemen, Wrath of Man, Halloween Kills, Here. Day-and-date releases on Peacock and Amazon MGM. Library reactivation and global brand.",
-    accent: "var(--blue)",
     tone: "default",
   },
   {
