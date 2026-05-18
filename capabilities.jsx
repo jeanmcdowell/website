@@ -1,18 +1,6 @@
 // Capabilities - grouped disciplines, compact cards.
 const CAP_GROUPS = [
   {
-    title: "Digital & Platform",
-    color: "var(--yellow)",
-    items: [
-      { k: "Social Strategy & Management", d: "Platform-native creative across Instagram, TikTok, YouTube, X. Campaign architecture from first-look reveal to opening weekend and the streaming window." },
-      { k: "Influencer & Talent-First Content", d: "Filmmaker, talent, and creator activations sequenced to campaign milestones. Earned media that compounds awareness." },
-      { k: "Platform Innovation & Emerging Tech", d: "First-to-market programs with platforms. From a studio's earliest online launches through PVOD, streaming, and platform-direct activations." },
-      { k: "PVOD & Streaming Activation", d: "Windowing strategy, hybrid release campaigns, and audience routing across distribution windows." },
-      { k: "Digital Paid Media", d: "Channel mix, audience targeting, and flighting across digital, social, programmatic, and platform-direct buys." },
-      { k: "Agency & RFP Management", d: "Selection, scoping, and management of digital creative shops, social agencies, and influencer firms against scope and spend." },
-    ],
-  },
-  {
     title: "Marketing",
     color: "var(--red)",
     items: [
@@ -25,6 +13,18 @@ const CAP_GROUPS = [
       { k: "Audience Research & Segmentation", d: "Tracking, screening, and competitive analysis modeled at title and slate level across theatrical and streaming." },
       { k: "Exhibitor Marketing", d: "Chain and indie-circuit coordination. The rooms films actually open in." },
       { k: "International Marketing, Sales, and Distribution", d: "Multi-territory campaigns across theatrical and streaming. Sales coordination, distributor partnerships, localization, talent deployment, and PR sequenced market-by-market." },
+    ],
+  },
+  {
+    title: "Digital & Platform",
+    color: "var(--yellow)",
+    items: [
+      { k: "Social Strategy & Management", d: "Platform-native creative across Instagram, TikTok, YouTube, X. Campaign architecture from first-look reveal to opening weekend and the streaming window." },
+      { k: "Influencer & Talent-First Content", d: "Filmmaker, talent, and creator activations sequenced to campaign milestones. Earned media that compounds awareness." },
+      { k: "Platform Innovation & Emerging Tech", d: "First-to-market programs with platforms. From a studio's earliest online launches through PVOD, streaming, and platform-direct activations." },
+      { k: "PVOD & Streaming Activation", d: "Windowing strategy, hybrid release campaigns, and audience routing across distribution windows." },
+      { k: "Digital Paid Media", d: "Channel mix, audience targeting, and flighting across digital, social, programmatic, and platform-direct buys." },
+      { k: "Agency & RFP Management", d: "Selection, scoping, and management of digital creative shops, social agencies, and influencer firms against scope and spend." },
     ],
   },
   {
