@@ -12,10 +12,17 @@ const trackEvent = (name, params) => {
   if (typeof window === "undefined" || !name) return;
   const payload = Object.assign({}, params || {});
   try {
+    // GA4
     if (typeof window.gtag === "function") {
       window.gtag("event", name, payload);
     } else if (Array.isArray(window.dataLayer)) {
       window.dataLayer.push(Object.assign({ event: name }, payload));
+    }
+    // Plausible (custom event with props)
+    if (typeof window.plausible === "function") {
+      // Plausible event name is human-readable; underscore_case -> Title Case
+      const pretty = name.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      window.plausible(pretty, { props: payload });
     }
   } catch (_) { /* never let analytics break the UI */ }
 };

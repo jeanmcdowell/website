@@ -30,6 +30,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Anton&family=Bowlby+One&family=Alfa+Slab+One&family=Inter:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
 
+<!-- Analytics: GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JR971YNZM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7JR971YNZM', { send_page_view: true, anonymize_ip: true });
+</script>
+
+<!-- Analytics: Plausible (file downloads + outbound links auto-tracked) -->
+<script defer data-domain="jeanmcdowell.com" src="https://plausible.io/js/script.file-downloads.outbound-links.js"></script>
+<script>
+  window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments); };
+</script>
+
 <!-- React + Babel -->
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
