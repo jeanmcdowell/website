@@ -2,19 +2,6 @@
 
 const CAMPAIGNS = [
   {
-    h: "Digital, Social & Streaming Activations",
-    items: [
-      "John Wick (franchise social + platform)",
-      "The Hunger Games (franchise social + platform)",
-      "Halloween Kills (PVOD + streaming windowing)",
-      "The Beekeeper (digital-first launch)",
-      "Wrath of Man (digital + platform)",
-      "Operation Fortune (digital + influencer)",
-      "Strange Darling (specialty digital)",
-      "Old Dads (PVOD launch)",
-    ],
-  },
-  {
     h: "Franchise & Tentpole",
     items: [
       "The Hunger Games: Catching Fire",
@@ -107,14 +94,6 @@ const ROLES = [
     tone: "default",
   },
   {
-    co: "Lionsgate",
-    title: "Director, Digital Marketing",
-    period: "2006 to 2009",
-    note: "Built and led the studio's first dedicated digital marketing function. Launched its earliest online, social, and interactive campaigns. Integrated digital into theatrical and home entertainment marketing as a core campaign layer, not a tactic.",
-    accent: "var(--yellow)",
-    tone: "default",
-  },
-  {
     co: "The Weinstein Company",
     title: "VP, Marketing",
     period: "2010 to 2012",
@@ -127,6 +106,14 @@ const ROLES = [
     title: "Co-Founder",
     period: "2009 to 2010",
     note: "Co-founded a boutique agency specializing in prestige and breakout film campaigns for independent and studio-backed releases. Led marketing and awards strategy in close collaboration with distributors, PR teams, and filmmakers.",
+    accent: "var(--yellow)",
+    tone: "default",
+  },
+  {
+    co: "Lionsgate",
+    title: "Director, Digital Marketing",
+    period: "2006 to 2009",
+    note: "Built and led the studio's first dedicated digital marketing function. Launched its earliest online, social, and interactive campaigns. Integrated digital into theatrical and home entertainment marketing as a core campaign layer, not a tactic.",
     accent: "var(--yellow)",
     tone: "default",
   },
