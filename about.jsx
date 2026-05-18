@@ -79,7 +79,7 @@ const About = () => {
               <span style={{ background: "var(--yellow)", padding: "0 6px" }}>200+ films marketed</span>{" "}
               across studios, streamers, formats, and tentpoles.{" "}
               <u style={{ textDecorationThickness: 4, textUnderlineOffset: 6, textDecorationColor: "var(--red)" }}>
-                Built to ship.
+                Across the slate, top to bottom.
               </u>
             </p>
 
