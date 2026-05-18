@@ -4,17 +4,13 @@ const CAMPAIGNS = [
   {
     h: "Franchise & Tentpole",
     items: [
-      "The Hunger Games: Catching Fire",
-      "The Hunger Games: Mockingjay Part 1 & 2",
-      "John Wick: Chapter 2",
-      "John Wick: Chapter 3",
+      "The Hunger Games",
+      "John Wick",
       "Divergent",
-      "Allegiant",
-      "Now You See Me 1 & 2",
-      "Halloween Kills",
-      "Halloween Ends",
+      "Now You See Me",
+      "Halloween",
+      "The Expendables",
       "Power Rangers",
-      "The Expendables 3",
       "The Beekeeper",
     ],
   },
@@ -54,8 +50,7 @@ const CAMPAIGNS = [
       "Confess, Fletch",
       "Uncle Frank",
       "Old Dads",
-      "Boo! A Madea Halloween",
-      "A Madea Family Funeral",
+      "The Madea franchise",
     ],
   },
 ];
@@ -138,7 +133,7 @@ const Resume = () => {
         <div className="section-tag">
           <span className="num">&sect; 02</span>
           <span className="name">Work</span>
-          <span className="meta">Selected campaigns &middot; Most recent first</span>
+          <span className="meta">Selected campaigns</span>
         </div>
 
         {/* Selected Campaigns block */}
