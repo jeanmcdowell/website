@@ -43,12 +43,12 @@ const About = () => {
   }, [statsTriggered, reduce]);
 
   const metrics = [
-    { k: "Films marketed", v: "200+", big: true },
+    { k: "Release campaigns", v: "200+", big: true },
     { k: "Range", v: "Awards to Tentpole" },
     { k: "Tentpoles", v: "John Wick · Hunger Games · Tyler Perry" },
     { k: "Prestige", v: "La La Land · The Artist · Hacksaw Ridge" },
     { k: "P&A range", v: "Under $1M to $25M+" },
-    { k: "Formats", v: "Theatrical · Streaming · PVOD · Platform" },
+    { k: "Digital footprint", v: "Social · Influencer · Platform · PVOD · Streaming" },
   ];
 
   return (
@@ -76,10 +76,10 @@ const About = () => {
               marginTop: 0,
               marginBottom: 0,
             }}>
-              <span style={{ background: "var(--yellow)", padding: "0 6px" }}>200+ films marketed</span>{" "}
+              <span style={{ background: "var(--yellow)", padding: "0 6px" }}>200+ release campaigns</span>{" "}
               across studios, streamers, formats, and tentpoles.{" "}
               <u style={{ textDecorationThickness: 4, textUnderlineOffset: 6, textDecorationColor: "var(--red)" }}>
-                Built to ship.
+                Across the slate, top to bottom.
               </u>
             </p>
 
@@ -89,7 +89,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Title-level positioning and overarching campaign strategy, then execution across creative, media, publicity, partnerships, and distribution. P&amp;A modeled as architecture, not a budget line. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
+Title positioning and 360 campaign strategy, then execution across creative, media, publicity, partnerships, and distribution. Research and audience judgment feeding greenlight, positioning, and slate decisions, not just campaign execution. Digital-first thinking from a studio&rsquo;s earliest online activations through today&rsquo;s social, influencer, PVOD, and platform-direct programs. P&amp;A modeled as architecture, not a budget line. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
             </p>
             <p style={{
               marginTop: 18,
@@ -122,7 +122,7 @@ const About = () => {
                     lineHeight: m.big ? 1 : 1.4,
                     fontFamily: m.big ? "var(--display)" : "var(--body)",
                     fontWeight: m.big ? 900 : 500,
-                  }}>{m.k === "Films marketed" ? `${filmCount}+` : m.v}</div>
+                  }}>{m.k === "Release campaigns" ? `${filmCount}+` : m.v}</div>
                 </div>
               ))}
             </div>

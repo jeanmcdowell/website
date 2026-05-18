@@ -4,17 +4,13 @@ const CAMPAIGNS = [
   {
     h: "Franchise & Tentpole",
     items: [
-      "The Hunger Games: Catching Fire",
-      "The Hunger Games: Mockingjay Part 1 & 2",
-      "John Wick: Chapter 2",
-      "John Wick: Chapter 3",
+      "The Hunger Games",
+      "John Wick",
       "Divergent",
-      "Allegiant",
-      "Now You See Me 1 & 2",
-      "Halloween Kills",
-      "Halloween Ends",
+      "Now You See Me",
+      "Halloween",
+      "The Expendables",
       "Power Rangers",
-      "The Expendables 3",
       "The Beekeeper",
     ],
   },
@@ -54,8 +50,7 @@ const CAMPAIGNS = [
       "Confess, Fletch",
       "Uncle Frank",
       "Old Dads",
-      "Boo! A Madea Halloween",
-      "A Madea Family Funeral",
+      "The Madea franchise",
     ],
   },
 ];
@@ -89,7 +84,7 @@ const ROLES = [
     co: "Lionsgate",
     title: "SVP, Worldwide Research & Marketing",
     period: "2012 to 2019",
-    note: "Led research and audience strategy for the Motion Picture Group across franchises and breakout titles including John Wick, The Hunger Games, Now You See Me, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler Perry franchise. Founded and launched Lionsgate Premiere. P&A budgets from under $1M through $25M+.",
+    note: "Led research and audience strategy for the Motion Picture Group across franchises and breakout titles including John Wick, The Hunger Games, Now You See Me, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler Perry franchise. Founded and launched Lionsgate Premiere as a specialty and day-and-date distribution arm, opening new digital and platform revenue lines. P&A budgets from under $1M through $25M+.",
     accent: "var(--ink)",
     tone: "default",
   },
@@ -106,6 +101,14 @@ const ROLES = [
     title: "Co-Founder",
     period: "2009 to 2010",
     note: "Co-founded a boutique agency specializing in prestige and breakout film campaigns for independent and studio-backed releases. Led marketing and awards strategy in close collaboration with distributors, PR teams, and filmmakers.",
+    accent: "var(--yellow)",
+    tone: "default",
+  },
+  {
+    co: "Lionsgate",
+    title: "Director, Digital Marketing",
+    period: "2006 to 2009",
+    note: "Built and led the studio's first dedicated digital marketing function. Launched its earliest online, social, and interactive campaigns. Integrated digital into theatrical and home entertainment marketing as a core campaign layer, not a tactic.",
     accent: "var(--yellow)",
     tone: "default",
   },
@@ -130,7 +133,7 @@ const Resume = () => {
         <div className="section-tag">
           <span className="num">&sect; 02</span>
           <span className="name">Work</span>
-          <span className="meta">Selected campaigns &middot; Most recent first</span>
+          <span className="meta">Selected campaigns</span>
         </div>
 
         {/* Selected Campaigns block */}
@@ -146,7 +149,7 @@ const Resume = () => {
             display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
           }}>
             <span>Selected campaigns</span>
-            <span style={{ opacity: 0.6 }}>200+ films &middot; Awards to tentpole</span>
+            <span style={{ opacity: 0.6 }}>200+ titles &middot; Awards to tentpole</span>
           </div>
           <div ref={campaignsRef} className="selected-campaigns-grid" style={{
             display: "grid",
@@ -195,7 +198,7 @@ const Resume = () => {
           textTransform: "uppercase", opacity: 0.85,
           display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
         }}>
-          <span>200+ films &middot; Awards to tentpole &middot; Two-page CV</span>
+          <span>200+ titles &middot; Awards to tentpole &middot; Two-page CV</span>
           <a
             href="/jean-mcdowell-resume.pdf"
             className="mech"
