@@ -89,7 +89,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Title-level positioning and overarching campaign strategy, then execution across creative, media, publicity, partnerships, and distribution. Digital-first thinking from a studio&rsquo;s earliest online activations through today&rsquo;s social, influencer, PVOD, and platform-direct programs. P&amp;A modeled as architecture, not a budget line. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
+Title positioning and 360 campaign strategy, then execution across creative, media, publicity, partnerships, and distribution. Research and audience judgment feeding greenlight, positioning, and slate decisions, not just campaign execution. Digital-first thinking from a studio&rsquo;s earliest online activations through today&rsquo;s social, influencer, PVOD, and platform-direct programs. P&amp;A modeled as architecture, not a budget line. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
             </p>
             <p style={{
               marginTop: 18,

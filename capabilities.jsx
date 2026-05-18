@@ -4,6 +4,9 @@ const CAP_GROUPS = [
     title: "Marketing",
     color: "var(--red)",
     items: [
+      { k: "Greenlight & Slate Strategy", d: "Audience research, competitive analysis, and market judgment feeding greenlight, positioning, and slate decisions at the studio level." },
+      { k: "Title Positioning", d: "Title-level positioning from greenlight through release. The angle a film travels on, anchored to audience and competitive landscape." },
+      { k: "360 Campaigns", d: "Integrated paid, earned, owned, and partnership programs across creative, media, publicity, social, and distribution. Audience meets the film everywhere." },
       { k: "Release Strategy", d: "Theatrical, hybrid, day-and-date, streaming windowing, sequenced to audience, platform, and slate economics." },
       { k: "P&A Architecture", d: "Prints-and-advertising plans from under $1M through $25M+, modeled and tracked weekly against performance." },
       { k: "Creative Advertising", d: "Trailers, TV spots, key art, full digital asset suites. Direct creative shops; review every frame." },

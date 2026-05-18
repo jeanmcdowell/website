@@ -152,7 +152,7 @@ const Hero = () => {
               Digital, Theatrical &amp; Streaming Marketing
             </span>
             Digital, theatrical, PVOD, and streaming marketing executive.{" "}
-            <strong>200+ release campaigns</strong> across studio, specialty, and boutique. Title-level positioning and campaign strategy across John Wick, The Hunger Games, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler Perry franchise. Awards work on The Artist, Django Unchained, and Silver Linings Playbook.
+            <strong>200+ release campaigns</strong> across studio, specialty, and boutique. Title positioning and 360 campaign strategy across John Wick, The Hunger Games, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler Perry franchise. Awards work on The Artist, Django Unchained, and Silver Linings Playbook.
             <span style={{ display: "block", marginTop: 14, opacity: 0.85 }}>
               Digital-led campaign strategy from a studio&rsquo;s first dedicated online activations through PVOD and platform-direct programs today. Audience insight, performance data, and market judgment. Lean teams. Measurable accountability.
             </span>
