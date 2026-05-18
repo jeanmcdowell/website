@@ -149,12 +149,12 @@ const Hero = () => {
             transition: reduce ? "none" : "opacity 600ms ease, transform 700ms cubic-bezier(.2,.8,.2,1)",
           }}>
             <span className="eyebrow" style={{ display: "block", marginBottom: 14, color: "var(--red)" }}>
-              Theatrical Marketing &amp; Distribution
+              Digital, Theatrical &amp; Streaming Marketing
             </span>
-            Theatrical, PVOD, and streaming marketing executive.{" "}
+            Digital, theatrical, PVOD, and streaming marketing executive.{" "}
             <strong>200+ films marketed</strong> across studio, specialty, and boutique. Title-level positioning and campaign strategy across John Wick, The Hunger Games, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler Perry franchise. Awards work on The Artist, Django Unchained, and Silver Linings Playbook.
             <span style={{ display: "block", marginTop: 14, opacity: 0.85 }}>
-              Audience insight, performance data, and market judgment. Senior judgment. Lean teams. Measurable accountability.
+              Digital-led campaign strategy from a studio&rsquo;s first dedicated online activations through PVOD and platform-direct programs today. Audience insight, performance data, and market judgment. Lean teams. Measurable accountability.
             </span>
           </div>
 

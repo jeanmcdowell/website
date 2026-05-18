@@ -2,6 +2,19 @@
 
 const CAMPAIGNS = [
   {
+    h: "Digital, Social & Streaming Activations",
+    items: [
+      "John Wick (franchise social + platform)",
+      "The Hunger Games (franchise social + platform)",
+      "Halloween Kills (PVOD + streaming windowing)",
+      "The Beekeeper (digital-first launch)",
+      "Wrath of Man (digital + platform)",
+      "Operation Fortune (digital + influencer)",
+      "Strange Darling (specialty digital)",
+      "Old Dads (PVOD launch)",
+    ],
+  },
+  {
     h: "Franchise & Tentpole",
     items: [
       "The Hunger Games: Catching Fire",
@@ -89,8 +102,16 @@ const ROLES = [
     co: "Lionsgate",
     title: "SVP, Worldwide Research & Marketing",
     period: "2012 to 2019",
-    note: "Led research and audience strategy for the Motion Picture Group across franchises and breakout titles including John Wick, The Hunger Games, Now You See Me, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler Perry franchise. Founded and launched Lionsgate Premiere. P&A budgets from under $1M through $25M+.",
+    note: "Led research and audience strategy for the Motion Picture Group across franchises and breakout titles including John Wick, The Hunger Games, Now You See Me, La La Land, Sicario, Wonder, Hacksaw Ridge, and the Tyler Perry franchise. Founded and launched Lionsgate Premiere as a specialty and day-and-date distribution arm, opening new digital and platform revenue lines. P&A budgets from under $1M through $25M+.",
     accent: "var(--ink)",
+    tone: "default",
+  },
+  {
+    co: "Lionsgate",
+    title: "Director, Digital Marketing",
+    period: "2006 to 2009",
+    note: "Built and led the studio's first dedicated digital marketing function. Launched its earliest online, social, and interactive campaigns. Integrated digital into theatrical and home entertainment marketing as a core campaign layer, not a tactic.",
+    accent: "var(--yellow)",
     tone: "default",
   },
   {

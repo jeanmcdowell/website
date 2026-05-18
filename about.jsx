@@ -48,7 +48,7 @@ const About = () => {
     { k: "Tentpoles", v: "John Wick · Hunger Games · Tyler Perry" },
     { k: "Prestige", v: "La La Land · The Artist · Hacksaw Ridge" },
     { k: "P&A range", v: "Under $1M to $25M+" },
-    { k: "Formats", v: "Theatrical · Streaming · PVOD · Platform" },
+    { k: "Digital footprint", v: "Social · Influencer · Platform · PVOD · Streaming" },
   ];
 
   return (
@@ -89,7 +89,7 @@ const About = () => {
               fontSize: 17,
               lineHeight: 1.6,
             }}>
-              Title-level positioning and overarching campaign strategy, then execution across creative, media, publicity, partnerships, and distribution. P&amp;A modeled as architecture, not a budget line. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
+              Title-level positioning and overarching campaign strategy, then execution across creative, media, publicity, partnerships, and distribution. Digital-first thinking from a studio&rsquo;s earliest online activations through today&rsquo;s social, influencer, PVOD, and platform-direct programs. P&amp;A modeled as architecture, not a budget line. Audience segmentation, exhibitor relationships, and streaming-window strategy built to outlast opening weekend.
             </p>
             <p style={{
               marginTop: 18,
