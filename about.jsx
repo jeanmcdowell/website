@@ -43,7 +43,7 @@ const About = () => {
   }, [statsTriggered, reduce]);
 
   const metrics = [
-    { k: "Films marketed", v: "200+", big: true },
+    { k: "Release campaigns", v: "200+", big: true },
     { k: "Range", v: "Awards to Tentpole" },
     { k: "Tentpoles", v: "John Wick · Hunger Games · Tyler Perry" },
     { k: "Prestige", v: "La La Land · The Artist · Hacksaw Ridge" },
@@ -76,7 +76,7 @@ const About = () => {
               marginTop: 0,
               marginBottom: 0,
             }}>
-              <span style={{ background: "var(--yellow)", padding: "0 6px" }}>200+ films marketed</span>{" "}
+              <span style={{ background: "var(--yellow)", padding: "0 6px" }}>200+ release campaigns</span>{" "}
               across studios, streamers, formats, and tentpoles.{" "}
               <u style={{ textDecorationThickness: 4, textUnderlineOffset: 6, textDecorationColor: "var(--red)" }}>
                 Across the slate, top to bottom.
@@ -122,7 +122,7 @@ const About = () => {
                     lineHeight: m.big ? 1 : 1.4,
                     fontFamily: m.big ? "var(--display)" : "var(--body)",
                     fontWeight: m.big ? 900 : 500,
-                  }}>{m.k === "Films marketed" ? `${filmCount}+` : m.v}</div>
+                  }}>{m.k === "Release campaigns" ? `${filmCount}+` : m.v}</div>
                 </div>
               ))}
             </div>

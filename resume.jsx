@@ -149,7 +149,7 @@ const Resume = () => {
             display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
           }}>
             <span>Selected campaigns</span>
-            <span style={{ opacity: 0.6 }}>200+ films &middot; Awards to tentpole</span>
+            <span style={{ opacity: 0.6 }}>200+ titles &middot; Awards to tentpole</span>
           </div>
           <div ref={campaignsRef} className="selected-campaigns-grid" style={{
             display: "grid",
@@ -198,7 +198,7 @@ const Resume = () => {
           textTransform: "uppercase", opacity: 0.85,
           display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
         }}>
-          <span>200+ films &middot; Awards to tentpole &middot; Two-page CV</span>
+          <span>200+ titles &middot; Awards to tentpole &middot; Two-page CV</span>
           <a
             href="/jean-mcdowell-resume.pdf"
             className="mech"
