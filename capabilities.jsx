@@ -11,7 +11,6 @@ const CAP_GROUPS = [
       { k: "Publicity & Talent Relations", d: "Press tours, premieres, embargoes, filmmaker and talent handling." },
       { k: "Awards Positioning", d: "Campaign architecture from festival debut to ballot deadline." },
       { k: "Audience Research & Segmentation", d: "Tracking, screening, and competitive analysis modeled at title and slate level across theatrical and streaming." },
-      { k: "Exhibitor Marketing", d: "Chain and indie-circuit coordination. The rooms films actually open in." },
       { k: "International Marketing, Sales, and Distribution", d: "Multi-territory campaigns across theatrical and streaming. Sales coordination, distributor partnerships, localization, talent deployment, and PR sequenced market-by-market." },
     ],
   },
