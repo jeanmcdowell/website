@@ -39,10 +39,12 @@
   gtag('config', 'G-7JR971YNZM', { send_page_view: true, anonymize_ip: true });
 </script>
 
-<!-- Analytics: Plausible (file downloads + outbound links auto-tracked) -->
-<script defer data-domain="jeanmcdowell.com" src="https://plausible.io/js/script.file-downloads.outbound-links.js"></script>
+<!-- Analytics: Plausible -->
+<script async src="https://plausible.io/js/pa-y1cgeA_UeusoOfXqbobcv.js"></script>
 <script>
-  window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments); };
+  window.plausible = window.plausible || function(){(plausible.q=plausible.q||[]).push(arguments)};
+  plausible.init = plausible.init || function(i){plausible.o=i||{}};
+  plausible.init({ outboundLinks: true, fileDownloads: true });
 </script>
 
 <!-- React + Babel -->
