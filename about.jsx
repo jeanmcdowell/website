@@ -79,7 +79,7 @@ const About = () => {
               <span style={{ background: "var(--yellow)", padding: "0 6px" }}>200+ release campaigns</span>{" "}
               across studios, streamers, formats, and tentpoles.{" "}
               <u style={{ textDecorationThickness: 4, textUnderlineOffset: 6, textDecorationColor: "var(--red)" }}>
-                Across the slate, top to bottom.
+                Top to bottom of the slate.
               </u>
             </p>
 
